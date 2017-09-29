@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		748D5F6F1F7BDA7D00244E3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F6E1F7BDA7D00244E3B /* AppDelegate.m */; };
+		748D5F751F7BDA7D00244E3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 748D5F731F7BDA7D00244E3B /* Main.storyboard */; };
+		748D5F771F7BDA7D00244E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 748D5F761F7BDA7D00244E3B /* Assets.xcassets */; };
+		748D5F7A1F7BDA7D00244E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 748D5F781F7BDA7D00244E3B /* LaunchScreen.storyboard */; };
+		748D5F7D1F7BDA7D00244E3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F7C1F7BDA7D00244E3B /* main.m */; };
+		748D5F871F7BDA7D00244E3B /* PCConnectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F861F7BDA7D00244E3B /* PCConnectTests.m */; };
+		748D5F921F7BDA7D00244E3B /* PCConnectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F911F7BDA7D00244E3B /* PCConnectUITests.m */; };
+		74CF7F781F7CB7FD00CFE6B4 /* PCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F771F7CB7FD00CFE6B4 /* PCCTabBarController.m */; };
+		74CF7F7B1F7CB82800CFE6B4 /* PCCNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F7A1F7CB82800CFE6B4 /* PCCNavgationController.m */; };
+		74CF7F811F7CB8CF00CFE6B4 /* PCCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F801F7CB8CF00CFE6B4 /* PCCTabBar.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		748D5F831F7BDA7D00244E3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 748D5F621F7BDA7D00244E3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 748D5F691F7BDA7D00244E3B;
+			remoteInfo = PCConnect;
+		};
+		748D5F8E1F7BDA7D00244E3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 748D5F621F7BDA7D00244E3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 748D5F691F7BDA7D00244E3B;
+			remoteInfo = PCConnect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		748D5F6A1F7BDA7D00244E3B /* PCConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		748D5F6D1F7BDA7D00244E3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		748D5F6E1F7BDA7D00244E3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		748D5F741F7BDA7D00244E3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		748D5F761F7BDA7D00244E3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		748D5F791F7BDA7D00244E3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		748D5F7B1F7BDA7D00244E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		748D5F7C1F7BDA7D00244E3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		748D5F821F7BDA7D00244E3B /* PCConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PCConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		748D5F861F7BDA7D00244E3B /* PCConnectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCConnectTests.m; sourceTree = "<group>"; };
+		748D5F881F7BDA7D00244E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		748D5F8D1F7BDA7D00244E3B /* PCConnectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PCConnectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		748D5F911F7BDA7D00244E3B /* PCConnectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCConnectUITests.m; sourceTree = "<group>"; };
+		748D5F931F7BDA7D00244E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74CF7F761F7CB7FD00CFE6B4 /* PCCTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCTabBarController.h; sourceTree = "<group>"; };
+		74CF7F771F7CB7FD00CFE6B4 /* PCCTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCTabBarController.m; sourceTree = "<group>"; };
+		74CF7F791F7CB82800CFE6B4 /* PCCNavgationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCNavgationController.h; sourceTree = "<group>"; };
+		74CF7F7A1F7CB82800CFE6B4 /* PCCNavgationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCNavgationController.m; sourceTree = "<group>"; };
+		74CF7F7F1F7CB8CF00CFE6B4 /* PCCTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCTabBar.h; sourceTree = "<group>"; };
+		74CF7F801F7CB8CF00CFE6B4 /* PCCTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCTabBar.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		748D5F671F7BDA7D00244E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		748D5F7F1F7BDA7D00244E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		748D5F8A1F7BDA7D00244E3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		748D5F611F7BDA7D00244E3B = {
+			isa = PBXGroup;
+			children = (
+				748D5F6C1F7BDA7D00244E3B /* PCConnect */,
+				748D5F851F7BDA7D00244E3B /* PCConnectTests */,
+				748D5F901F7BDA7D00244E3B /* PCConnectUITests */,
+				748D5F6B1F7BDA7D00244E3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		748D5F6B1F7BDA7D00244E3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				748D5F6A1F7BDA7D00244E3B /* PCConnect.app */,
+				748D5F821F7BDA7D00244E3B /* PCConnectTests.xctest */,
+				748D5F8D1F7BDA7D00244E3B /* PCConnectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		748D5F6C1F7BDA7D00244E3B /* PCConnect */ = {
+			isa = PBXGroup;
+			children = (
+				748D5FA41F7BEC8300244E3B /* Root */,
+				748D5FA31F7BEC3100244E3B /* Items */,
+				748D5FA01F7BEA9600244E3B /* Libs */,
+				748D5FA21F7BEB9B00244E3B /* Extensions */,
+				748D5FA11F7BEB1300244E3B /* Helper */,
+				748D5F9F1F7BDAB200244E3B /* SupportFile */,
+			);
+			path = PCConnect;
+			sourceTree = "<group>";
+		};
+		748D5F851F7BDA7D00244E3B /* PCConnectTests */ = {
+			isa = PBXGroup;
+			children = (
+				748D5F861F7BDA7D00244E3B /* PCConnectTests.m */,
+				748D5F881F7BDA7D00244E3B /* Info.plist */,
+			);
+			path = PCConnectTests;
+			sourceTree = "<group>";
+		};
+		748D5F901F7BDA7D00244E3B /* PCConnectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				748D5F911F7BDA7D00244E3B /* PCConnectUITests.m */,
+				748D5F931F7BDA7D00244E3B /* Info.plist */,
+			);
+			path = PCConnectUITests;
+			sourceTree = "<group>";
+		};
+		748D5F9F1F7BDAB200244E3B /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				748D5F6D1F7BDA7D00244E3B /* AppDelegate.h */,
+				748D5F6E1F7BDA7D00244E3B /* AppDelegate.m */,
+				748D5F731F7BDA7D00244E3B /* Main.storyboard */,
+				748D5F761F7BDA7D00244E3B /* Assets.xcassets */,
+				748D5F781F7BDA7D00244E3B /* LaunchScreen.storyboard */,
+				748D5F7B1F7BDA7D00244E3B /* Info.plist */,
+				748D5F7C1F7BDA7D00244E3B /* main.m */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		748D5FA01F7BEA9600244E3B /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		748D5FA11F7BEB1300244E3B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		748D5FA21F7BEB9B00244E3B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				748D5FE51F7C9A3000244E3B /* NSExtension */,
+				748D5FE61F7C9A4400244E3B /* UIExtension */,
+				748D5FE71F7C9A6500244E3B /* Other */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		748D5FA31F7BEC3100244E3B /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				74CF7F821F7CC9D000CFE6B4 /* Task */,
+				748D5FE81F7C9B1700244E3B /* RemoteControl */,
+				748D5FE41F7C99FE00244E3B /* Settings */,
+				748D5FE31F7C99D700244E3B /* Document */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		748D5FA41F7BEC8300244E3B /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				74CF7F7C1F7CB86900CFE6B4 /* Controller */,
+				74CF7F7E1F7CB89700CFE6B4 /* View */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		748D5FE31F7C99D700244E3B /* Document */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		748D5FE41F7C99FE00244E3B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		748D5FE51F7C9A3000244E3B /* NSExtension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSExtension;
+			sourceTree = "<group>";
+		};
+		748D5FE61F7C9A4400244E3B /* UIExtension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIExtension;
+			sourceTree = "<group>";
+		};
+		748D5FE71F7C9A6500244E3B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		748D5FE81F7C9B1700244E3B /* RemoteControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteControl;
+			sourceTree = "<group>";
+		};
+		74CF7F7C1F7CB86900CFE6B4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74CF7F761F7CB7FD00CFE6B4 /* PCCTabBarController.h */,
+				74CF7F771F7CB7FD00CFE6B4 /* PCCTabBarController.m */,
+				74CF7F791F7CB82800CFE6B4 /* PCCNavgationController.h */,
+				74CF7F7A1F7CB82800CFE6B4 /* PCCNavgationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74CF7F7E1F7CB89700CFE6B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74CF7F7F1F7CB8CF00CFE6B4 /* PCCTabBar.h */,
+				74CF7F801F7CB8CF00CFE6B4 /* PCCTabBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74CF7F821F7CC9D000CFE6B4 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		748D5F691F7BDA7D00244E3B /* PCConnect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 748D5F961F7BDA7D00244E3B /* Build configuration list for PBXNativeTarget "PCConnect" */;
+			buildPhases = (
+				748D5F661F7BDA7D00244E3B /* Sources */,
+				748D5F671F7BDA7D00244E3B /* Frameworks */,
+				748D5F681F7BDA7D00244E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PCConnect;
+			productName = PCConnect;
+			productReference = 748D5F6A1F7BDA7D00244E3B /* PCConnect.app */;
+			productType = "com.apple.product-type.application";
+		};
+		748D5F811F7BDA7D00244E3B /* PCConnectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 748D5F991F7BDA7D00244E3B /* Build configuration list for PBXNativeTarget "PCConnectTests" */;
+			buildPhases = (
+				748D5F7E1F7BDA7D00244E3B /* Sources */,
+				748D5F7F1F7BDA7D00244E3B /* Frameworks */,
+				748D5F801F7BDA7D00244E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				748D5F841F7BDA7D00244E3B /* PBXTargetDependency */,
+			);
+			name = PCConnectTests;
+			productName = PCConnectTests;
+			productReference = 748D5F821F7BDA7D00244E3B /* PCConnectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		748D5F8C1F7BDA7D00244E3B /* PCConnectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 748D5F9C1F7BDA7D00244E3B /* Build configuration list for PBXNativeTarget "PCConnectUITests" */;
+			buildPhases = (
+				748D5F891F7BDA7D00244E3B /* Sources */,
+				748D5F8A1F7BDA7D00244E3B /* Frameworks */,
+				748D5F8B1F7BDA7D00244E3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				748D5F8F1F7BDA7D00244E3B /* PBXTargetDependency */,
+			);
+			name = PCConnectUITests;
+			productName = PCConnectUITests;
+			productReference = 748D5F8D1F7BDA7D00244E3B /* PCConnectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		748D5F621F7BDA7D00244E3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "满脸胡茬的怪蜀黍";
+				TargetAttributes = {
+					748D5F691F7BDA7D00244E3B = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					748D5F811F7BDA7D00244E3B = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 748D5F691F7BDA7D00244E3B;
+					};
+					748D5F8C1F7BDA7D00244E3B = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 748D5F691F7BDA7D00244E3B;
+					};
+				};
+			};
+			buildConfigurationList = 748D5F651F7BDA7D00244E3B /* Build configuration list for PBXProject "PCConnect" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 748D5F611F7BDA7D00244E3B;
+			productRefGroup = 748D5F6B1F7BDA7D00244E3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				748D5F691F7BDA7D00244E3B /* PCConnect */,
+				748D5F811F7BDA7D00244E3B /* PCConnectTests */,
+				748D5F8C1F7BDA7D00244E3B /* PCConnectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		748D5F681F7BDA7D00244E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				748D5F7A1F7BDA7D00244E3B /* LaunchScreen.storyboard in Resources */,
+				748D5F771F7BDA7D00244E3B /* Assets.xcassets in Resources */,
+				748D5F751F7BDA7D00244E3B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		748D5F801F7BDA7D00244E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		748D5F8B1F7BDA7D00244E3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		748D5F661F7BDA7D00244E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74CF7F7B1F7CB82800CFE6B4 /* PCCNavgationController.m in Sources */,
+				74CF7F811F7CB8CF00CFE6B4 /* PCCTabBar.m in Sources */,
+				748D5F7D1F7BDA7D00244E3B /* main.m in Sources */,
+				748D5F6F1F7BDA7D00244E3B /* AppDelegate.m in Sources */,
+				74CF7F781F7CB7FD00CFE6B4 /* PCCTabBarController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		748D5F7E1F7BDA7D00244E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				748D5F871F7BDA7D00244E3B /* PCConnectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		748D5F891F7BDA7D00244E3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				748D5F921F7BDA7D00244E3B /* PCConnectUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		748D5F841F7BDA7D00244E3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 748D5F691F7BDA7D00244E3B /* PCConnect */;
+			targetProxy = 748D5F831F7BDA7D00244E3B /* PBXContainerItemProxy */;
+		};
+		748D5F8F1F7BDA7D00244E3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 748D5F691F7BDA7D00244E3B /* PCConnect */;
+			targetProxy = 748D5F8E1F7BDA7D00244E3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		748D5F731F7BDA7D00244E3B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				748D5F741F7BDA7D00244E3B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		748D5F781F7BDA7D00244E3B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				748D5F791F7BDA7D00244E3B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		748D5F941F7BDA7D00244E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		748D5F951F7BDA7D00244E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		748D5F971F7BDA7D00244E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PCConnect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		748D5F981F7BDA7D00244E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PCConnect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		748D5F9A1F7BDA7D00244E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PCConnectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PCConnect.app/PCConnect";
+			};
+			name = Debug;
+		};
+		748D5F9B1F7BDA7D00244E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PCConnectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PCConnect.app/PCConnect";
+			};
+			name = Release;
+		};
+		748D5F9D1F7BDA7D00244E3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PCConnectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PCConnect;
+			};
+			name = Debug;
+		};
+		748D5F9E1F7BDA7D00244E3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PCConnectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PCConnect;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		748D5F651F7BDA7D00244E3B /* Build configuration list for PBXProject "PCConnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				748D5F941F7BDA7D00244E3B /* Debug */,
+				748D5F951F7BDA7D00244E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		748D5F961F7BDA7D00244E3B /* Build configuration list for PBXNativeTarget "PCConnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				748D5F971F7BDA7D00244E3B /* Debug */,
+				748D5F981F7BDA7D00244E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		748D5F991F7BDA7D00244E3B /* Build configuration list for PBXNativeTarget "PCConnectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				748D5F9A1F7BDA7D00244E3B /* Debug */,
+				748D5F9B1F7BDA7D00244E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		748D5F9C1F7BDA7D00244E3B /* Build configuration list for PBXNativeTarget "PCConnectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				748D5F9D1F7BDA7D00244E3B /* Debug */,
+				748D5F9E1F7BDA7D00244E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 748D5F621F7BDA7D00244E3B /* Project object */;
+}
