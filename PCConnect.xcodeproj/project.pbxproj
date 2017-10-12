@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14B6ED083BA9095D57F39C7C /* libPods-PCConnect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C34256CC878EA2188CAF67E /* libPods-PCConnect.a */; };
+		74309F201F8E1CF700053CAA /* LDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F1D1F8E1CF700053CAA /* LDSegmentView.m */; };
+		74309F211F8E1CF700053CAA /* LDSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F1F1F8E1CF700053CAA /* LDSegmentViewController.m */; };
+		74309F251F8E44B100053CAA /* PCCHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F241F8E44B100053CAA /* PCCHeaderFooterView.m */; };
+		74309F281F8E714E00053CAA /* PCCFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F271F8E714E00053CAA /* PCCFileCell.m */; };
+		74309F2C1F8E736D00053CAA /* PCCSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F2B1F8E736D00053CAA /* PCCSearchView.m */; };
+		74309F2F1F8F8CB600053CAA /* PCCDocumentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F2E1F8F8CB600053CAA /* PCCDocumentCell.m */; };
+		74309F321F8F98CF00053CAA /* PCCCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F311F8F98CF00053CAA /* PCCCollectionView.m */; };
+		74309F351F9000B800053CAA /* PCCQuiteCmdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F341F9000B800053CAA /* PCCQuiteCmdVC.m */; };
+		74309F381F9000FA00053CAA /* PCCDiskDocumentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F371F9000FA00053CAA /* PCCDiskDocumentVC.m */; };
+		74309F3B1F90013D00053CAA /* PCCMouseControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F3A1F90013D00053CAA /* PCCMouseControlVC.m */; };
+		74309F3E1F90015B00053CAA /* PCCSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F3D1F90015B00053CAA /* PCCSearchVC.m */; };
+		743122061F7FBC9700352168 /* PCCIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 743122051F7FBC9700352168 /* PCCIconView.m */; };
+		7447313F1F88C71C00D470FC /* PCCSocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7447313E1F88C71C00D470FC /* PCCSocketModel.m */; };
+		7466C9E71F8C7C650065DFB4 /* PCCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466C9E61F8C7C650065DFB4 /* PCCLoginController.m */; };
+		7466C9EF1F8C87650065DFB4 /* PCCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466C9EE1F8C87650065DFB4 /* PCCTextField.m */; };
+		7466C9FA1F8D05290065DFB4 /* NSString+PCCDictToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466C9F91F8D05290065DFB4 /* NSString+PCCDictToJSON.m */; };
+		7470777C1F8E0579005076A1 /* PCCQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470777B1F8E0579005076A1 /* PCCQuestionVC.m */; };
+		7470777F1F8E05D7005076A1 /* PCCFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470777E1F8E05D7005076A1 /* PCCFeedbackVC.m */; };
+		747077821F8E05EB005076A1 /* PCCAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 747077811F8E05EB005076A1 /* PCCAboutVC.m */; };
+		7470778C1F8E1231005076A1 /* PCCDownloadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470778B1F8E1231005076A1 /* PCCDownloadVC.m */; };
+		7470778F1F8E12E2005076A1 /* PCCUploadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470778E1F8E12E2005076A1 /* PCCUploadVC.m */; };
+		748A39481F8B9DE100042AD4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748A39471F8B9DE100042AD4 /* CFNetwork.framework */; };
 		748D5F6F1F7BDA7D00244E3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F6E1F7BDA7D00244E3B /* AppDelegate.m */; };
 		748D5F751F7BDA7D00244E3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 748D5F731F7BDA7D00244E3B /* Main.storyboard */; };
 		748D5F771F7BDA7D00244E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 748D5F761F7BDA7D00244E3B /* Assets.xcassets */; };
@@ -17,6 +40,14 @@
 		74CF7F781F7CB7FD00CFE6B4 /* PCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F771F7CB7FD00CFE6B4 /* PCCTabBarController.m */; };
 		74CF7F7B1F7CB82800CFE6B4 /* PCCNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F7A1F7CB82800CFE6B4 /* PCCNavgationController.m */; };
 		74CF7F811F7CB8CF00CFE6B4 /* PCCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F801F7CB8CF00CFE6B4 /* PCCTabBar.m */; };
+		74F99A3A1F7E41DB00C99C97 /* PCCItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F99A391F7E41DB00C99C97 /* PCCItemButton.m */; };
+		74F99A3D1F7E427C00C99C97 /* PCCComposeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F99A3C1F7E427C00C99C97 /* PCCComposeVC.m */; };
+		74F99A401F7E45F300C99C97 /* PCCMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F99A3F1F7E45F300C99C97 /* PCCMenuItem.m */; };
+		74F99A481F7E493B00C99C97 /* PCCDocumentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F99A471F7E493B00C99C97 /* PCCDocumentVC.m */; };
+		74F99A4B1F7E497C00C99C97 /* PCCRemoteControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F99A4A1F7E497C00C99C97 /* PCCRemoteControlVC.m */; };
+		74F99A4F1F7E49AF00C99C97 /* PCCTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F99A4E1F7E49AF00C99C97 /* PCCTaskVC.m */; };
+		74F99A531F7E49DC00C99C97 /* PCCSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F99A521F7E49DC00C99C97 /* PCCSettingVC.m */; };
+		74F99A5A1F7E510800C99C97 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74F99A591F7E510800C99C97 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +68,66 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C34256CC878EA2188CAF67E /* libPods-PCConnect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PCConnect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74309F1C1F8E1CF700053CAA /* LDSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSegmentView.h; sourceTree = "<group>"; };
+		74309F1D1F8E1CF700053CAA /* LDSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSegmentView.m; sourceTree = "<group>"; };
+		74309F1E1F8E1CF700053CAA /* LDSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSegmentViewController.h; sourceTree = "<group>"; };
+		74309F1F1F8E1CF700053CAA /* LDSegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSegmentViewController.m; sourceTree = "<group>"; };
+		74309F231F8E44B100053CAA /* PCCHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCHeaderFooterView.h; sourceTree = "<group>"; };
+		74309F241F8E44B100053CAA /* PCCHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCHeaderFooterView.m; sourceTree = "<group>"; };
+		74309F261F8E714E00053CAA /* PCCFileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCFileCell.h; sourceTree = "<group>"; };
+		74309F271F8E714E00053CAA /* PCCFileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCFileCell.m; sourceTree = "<group>"; };
+		74309F2A1F8E736D00053CAA /* PCCSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCSearchView.h; sourceTree = "<group>"; };
+		74309F2B1F8E736D00053CAA /* PCCSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCSearchView.m; sourceTree = "<group>"; };
+		74309F2D1F8F8CB600053CAA /* PCCDocumentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCDocumentCell.h; sourceTree = "<group>"; };
+		74309F2E1F8F8CB600053CAA /* PCCDocumentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCDocumentCell.m; sourceTree = "<group>"; };
+		74309F301F8F98CF00053CAA /* PCCCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCCollectionView.h; sourceTree = "<group>"; };
+		74309F311F8F98CF00053CAA /* PCCCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCCollectionView.m; sourceTree = "<group>"; };
+		74309F331F9000B800053CAA /* PCCQuiteCmdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCQuiteCmdVC.h; sourceTree = "<group>"; };
+		74309F341F9000B800053CAA /* PCCQuiteCmdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCQuiteCmdVC.m; sourceTree = "<group>"; };
+		74309F361F9000FA00053CAA /* PCCDiskDocumentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCDiskDocumentVC.h; sourceTree = "<group>"; };
+		74309F371F9000FA00053CAA /* PCCDiskDocumentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCDiskDocumentVC.m; sourceTree = "<group>"; };
+		74309F391F90013D00053CAA /* PCCMouseControlVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCMouseControlVC.h; sourceTree = "<group>"; };
+		74309F3A1F90013D00053CAA /* PCCMouseControlVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCMouseControlVC.m; sourceTree = "<group>"; };
+		74309F3C1F90015B00053CAA /* PCCSearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCSearchVC.h; sourceTree = "<group>"; };
+		74309F3D1F90015B00053CAA /* PCCSearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCSearchVC.m; sourceTree = "<group>"; };
+		743122041F7FBC9700352168 /* PCCIconView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCIconView.h; sourceTree = "<group>"; };
+		743122051F7FBC9700352168 /* PCCIconView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCIconView.m; sourceTree = "<group>"; };
+		7447313D1F88C71C00D470FC /* PCCSocketModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCSocketModel.h; sourceTree = "<group>"; };
+		7447313E1F88C71C00D470FC /* PCCSocketModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCSocketModel.m; sourceTree = "<group>"; };
+		7466C9E51F8C7C650065DFB4 /* PCCLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCLoginController.h; sourceTree = "<group>"; };
+		7466C9E61F8C7C650065DFB4 /* PCCLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCLoginController.m; sourceTree = "<group>"; };
+		7466C9E81F8C86D70065DFB4 /* UIAlertController+show.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+show.m"; sourceTree = "<group>"; };
+		7466C9E91F8C86D70065DFB4 /* UIAlertController+show.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+show.h"; sourceTree = "<group>"; };
+		7466C9EA1F8C86D70065DFB4 /* UILabel+WXYLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WXYLabel.m"; sourceTree = "<group>"; };
+		7466C9EB1F8C86D70065DFB4 /* UILabel+WXYLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+WXYLabel.h"; sourceTree = "<group>"; };
+		7466C9ED1F8C87650065DFB4 /* PCCTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCTextField.h; sourceTree = "<group>"; };
+		7466C9EE1F8C87650065DFB4 /* PCCTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCTextField.m; sourceTree = "<group>"; };
+		7466C9F11F8CD2540065DFB4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		7466C9F81F8D05290065DFB4 /* NSString+PCCDictToJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PCCDictToJSON.h"; sourceTree = "<group>"; };
+		7466C9F91F8D05290065DFB4 /* NSString+PCCDictToJSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PCCDictToJSON.m"; sourceTree = "<group>"; };
+		7470777A1F8E0579005076A1 /* PCCQuestionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCQuestionVC.h; sourceTree = "<group>"; };
+		7470777B1F8E0579005076A1 /* PCCQuestionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCQuestionVC.m; sourceTree = "<group>"; };
+		7470777D1F8E05D7005076A1 /* PCCFeedbackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCFeedbackVC.h; sourceTree = "<group>"; };
+		7470777E1F8E05D7005076A1 /* PCCFeedbackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCFeedbackVC.m; sourceTree = "<group>"; };
+		747077801F8E05EB005076A1 /* PCCAboutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCAboutVC.h; sourceTree = "<group>"; };
+		747077811F8E05EB005076A1 /* PCCAboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCAboutVC.m; sourceTree = "<group>"; };
+		7470778A1F8E1231005076A1 /* PCCDownloadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCDownloadVC.h; sourceTree = "<group>"; };
+		7470778B1F8E1231005076A1 /* PCCDownloadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCDownloadVC.m; sourceTree = "<group>"; };
+		7470778D1F8E12E2005076A1 /* PCCUploadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCUploadVC.h; sourceTree = "<group>"; };
+		7470778E1F8E12E2005076A1 /* PCCUploadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCUploadVC.m; sourceTree = "<group>"; };
+		748A39251F8B7D6F00042AD4 /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		748A39351F8B873000042AD4 /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		748A393B1F8B9D7200042AD4 /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		748A393E1F8B9D7200042AD4 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		748A393F1F8B9D7200042AD4 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		748A39401F8B9D7200042AD4 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		748A39411F8B9D7200042AD4 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		748A39431F8B9D7200042AD4 /* AsyncSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		748A39441F8B9D7200042AD4 /* AsyncSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		748A39451F8B9D7200042AD4 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		748A39461F8B9D7200042AD4 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		748A39471F8B9DE100042AD4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		748D5F6A1F7BDA7D00244E3B /* PCConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		748D5F6D1F7BDA7D00244E3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		748D5F6E1F7BDA7D00244E3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,6 +148,24 @@
 		74CF7F7A1F7CB82800CFE6B4 /* PCCNavgationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCNavgationController.m; sourceTree = "<group>"; };
 		74CF7F7F1F7CB8CF00CFE6B4 /* PCCTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCTabBar.h; sourceTree = "<group>"; };
 		74CF7F801F7CB8CF00CFE6B4 /* PCCTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCTabBar.m; sourceTree = "<group>"; };
+		74F99A381F7E41DB00C99C97 /* PCCItemButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCItemButton.h; sourceTree = "<group>"; };
+		74F99A391F7E41DB00C99C97 /* PCCItemButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCItemButton.m; sourceTree = "<group>"; };
+		74F99A3B1F7E427C00C99C97 /* PCCComposeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCComposeVC.h; sourceTree = "<group>"; };
+		74F99A3C1F7E427C00C99C97 /* PCCComposeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCComposeVC.m; sourceTree = "<group>"; };
+		74F99A3E1F7E45F300C99C97 /* PCCMenuItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCMenuItem.h; sourceTree = "<group>"; };
+		74F99A3F1F7E45F300C99C97 /* PCCMenuItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCMenuItem.m; sourceTree = "<group>"; };
+		74F99A461F7E493B00C99C97 /* PCCDocumentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCDocumentVC.h; sourceTree = "<group>"; };
+		74F99A471F7E493B00C99C97 /* PCCDocumentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCDocumentVC.m; sourceTree = "<group>"; };
+		74F99A491F7E497C00C99C97 /* PCCRemoteControlVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCRemoteControlVC.h; sourceTree = "<group>"; };
+		74F99A4A1F7E497C00C99C97 /* PCCRemoteControlVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCRemoteControlVC.m; sourceTree = "<group>"; };
+		74F99A4D1F7E49AF00C99C97 /* PCCTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCTaskVC.h; sourceTree = "<group>"; };
+		74F99A4E1F7E49AF00C99C97 /* PCCTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCTaskVC.m; sourceTree = "<group>"; };
+		74F99A511F7E49DC00C99C97 /* PCCSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCSettingVC.h; sourceTree = "<group>"; };
+		74F99A521F7E49DC00C99C97 /* PCCSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCSettingVC.m; sourceTree = "<group>"; };
+		74F99A541F7E4AE200C99C97 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		74F99A591F7E510800C99C97 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A2888B38CAFE2A3B23E4531A /* Pods-PCConnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PCConnect.release.xcconfig"; path = "Pods/Target Support Files/Pods-PCConnect/Pods-PCConnect.release.xcconfig"; sourceTree = "<group>"; };
+		EBC5B7D2624235FBB5312049 /* Pods-PCConnect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PCConnect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PCConnect/Pods-PCConnect.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748A39481F8B9DE100042AD4 /* CFNetwork.framework in Frameworks */,
+				14B6ED083BA9095D57F39C7C /* libPods-PCConnect.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +195,147 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C3C9CDBED12BF1103B9D4BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				748A39471F8B9DE100042AD4 /* CFNetwork.framework */,
+				748A393A1F8B9D7200042AD4 /* CocoaAsyncSocket */,
+				748A39351F8B873000042AD4 /* libCocoaAsyncSocket.a */,
+				748A39251F8B7D6F00042AD4 /* libCocoaAsyncSocket.a */,
+				1C34256CC878EA2188CAF67E /* libPods-PCConnect.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74309F1A1F8E1CF700053CAA /* LZSegmentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74309F1B1F8E1CF700053CAA /* LDSegmentView */,
+				74309F1E1F8E1CF700053CAA /* LDSegmentViewController.h */,
+				74309F1F1F8E1CF700053CAA /* LDSegmentViewController.m */,
+			);
+			path = LZSegmentViewController;
+			sourceTree = "<group>";
+		};
+		74309F1B1F8E1CF700053CAA /* LDSegmentView */ = {
+			isa = PBXGroup;
+			children = (
+				74309F1C1F8E1CF700053CAA /* LDSegmentView.h */,
+				74309F1D1F8E1CF700053CAA /* LDSegmentView.m */,
+			);
+			path = LDSegmentView;
+			sourceTree = "<group>";
+		};
+		74309F221F8E448A00053CAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74309F231F8E44B100053CAA /* PCCHeaderFooterView.h */,
+				74309F241F8E44B100053CAA /* PCCHeaderFooterView.m */,
+				74309F261F8E714E00053CAA /* PCCFileCell.h */,
+				74309F271F8E714E00053CAA /* PCCFileCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74309F291F8E735000053CAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74309F2A1F8E736D00053CAA /* PCCSearchView.h */,
+				74309F2B1F8E736D00053CAA /* PCCSearchView.m */,
+				74309F301F8F98CF00053CAA /* PCCCollectionView.h */,
+				74309F311F8F98CF00053CAA /* PCCCollectionView.m */,
+				74309F2D1F8F8CB600053CAA /* PCCDocumentCell.h */,
+				74309F2E1F8F8CB600053CAA /* PCCDocumentCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		743122031F7FBBE000352168 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				743122041F7FBC9700352168 /* PCCIconView.h */,
+				743122051F7FBC9700352168 /* PCCIconView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7447313C1F88C6F200D470FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7447313D1F88C71C00D470FC /* PCCSocketModel.h */,
+				7447313E1F88C71C00D470FC /* PCCSocketModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7466C9E31F8C7C2C0065DFB4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7466C9EC1F8C87360065DFB4 /* View */,
+				7466C9E41F8C7C3C0065DFB4 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7466C9E41F8C7C3C0065DFB4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7466C9E51F8C7C650065DFB4 /* PCCLoginController.h */,
+				7466C9E61F8C7C650065DFB4 /* PCCLoginController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7466C9EC1F8C87360065DFB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7466C9ED1F8C87650065DFB4 /* PCCTextField.h */,
+				7466C9EE1F8C87650065DFB4 /* PCCTextField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		748A393A1F8B9D7200042AD4 /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				748A393B1F8B9D7200042AD4 /* README.markdown */,
+				748A393C1F8B9D7200042AD4 /* Source */,
+			);
+			name = CocoaAsyncSocket;
+			path = Pods/CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		748A393C1F8B9D7200042AD4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				748A393D1F8B9D7200042AD4 /* GCD */,
+				748A39421F8B9D7200042AD4 /* RunLoop */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		748A393D1F8B9D7200042AD4 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				748A393E1F8B9D7200042AD4 /* GCDAsyncSocket.h */,
+				748A393F1F8B9D7200042AD4 /* GCDAsyncSocket.m */,
+				748A39401F8B9D7200042AD4 /* GCDAsyncUdpSocket.h */,
+				748A39411F8B9D7200042AD4 /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		748A39421F8B9D7200042AD4 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				748A39431F8B9D7200042AD4 /* AsyncSocket.h */,
+				748A39441F8B9D7200042AD4 /* AsyncSocket.m */,
+				748A39451F8B9D7200042AD4 /* AsyncUdpSocket.h */,
+				748A39461F8B9D7200042AD4 /* AsyncUdpSocket.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
 		748D5F611F7BDA7D00244E3B = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +343,8 @@
 				748D5F851F7BDA7D00244E3B /* PCConnectTests */,
 				748D5F901F7BDA7D00244E3B /* PCConnectUITests */,
 				748D5F6B1F7BDA7D00244E3B /* Products */,
+				A17FFEABE7C9C58778460250 /* Pods */,
+				4C3C9CDBED12BF1103B9D4BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,12 +361,13 @@
 		748D5F6C1F7BDA7D00244E3B /* PCConnect */ = {
 			isa = PBXGroup;
 			children = (
+				7466C9E31F8C7C2C0065DFB4 /* Login */,
 				748D5FA41F7BEC8300244E3B /* Root */,
 				748D5FA31F7BEC3100244E3B /* Items */,
-				748D5FA01F7BEA9600244E3B /* Libs */,
 				748D5FA21F7BEB9B00244E3B /* Extensions */,
 				748D5FA11F7BEB1300244E3B /* Helper */,
 				748D5F9F1F7BDAB200244E3B /* SupportFile */,
+				748D5F7B1F7BDA7D00244E3B /* Info.plist */,
 			);
 			path = PCConnect;
 			sourceTree = "<group>";
@@ -138,27 +393,23 @@
 		748D5F9F1F7BDAB200244E3B /* SupportFile */ = {
 			isa = PBXGroup;
 			children = (
+				74F99A591F7E510800C99C97 /* Default-568h@2x.png */,
+				7466C9F11F8CD2540065DFB4 /* icon.png */,
 				748D5F6D1F7BDA7D00244E3B /* AppDelegate.h */,
 				748D5F6E1F7BDA7D00244E3B /* AppDelegate.m */,
 				748D5F731F7BDA7D00244E3B /* Main.storyboard */,
 				748D5F761F7BDA7D00244E3B /* Assets.xcassets */,
 				748D5F781F7BDA7D00244E3B /* LaunchScreen.storyboard */,
-				748D5F7B1F7BDA7D00244E3B /* Info.plist */,
 				748D5F7C1F7BDA7D00244E3B /* main.m */,
 			);
 			path = SupportFile;
 			sourceTree = "<group>";
 		};
-		748D5FA01F7BEA9600244E3B /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
 		748D5FA11F7BEB1300244E3B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				74309F1A1F8E1CF700053CAA /* LZSegmentViewController */,
+				74F99A541F7E4AE200C99C97 /* PrefixHeader.pch */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -176,10 +427,11 @@
 		748D5FA31F7BEC3100244E3B /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				74CF7F821F7CC9D000CFE6B4 /* Task */,
+				74F99A551F7E4F6900C99C97 /* Menu */,
 				748D5FE81F7C9B1700244E3B /* RemoteControl */,
-				748D5FE41F7C99FE00244E3B /* Settings */,
 				748D5FE31F7C99D700244E3B /* Document */,
+				74CF7F821F7CC9D000CFE6B4 /* Task */,
+				748D5FE41F7C99FE00244E3B /* Settings */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -196,6 +448,8 @@
 		748D5FE31F7C99D700244E3B /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				74309F291F8E735000053CAA /* View */,
+				74F99A451F7E490300C99C97 /* Contorller */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -203,6 +457,7 @@
 		748D5FE41F7C99FE00244E3B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				74F99A501F7E49C800C99C97 /* Controller */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -210,6 +465,8 @@
 		748D5FE51F7C9A3000244E3B /* NSExtension */ = {
 			isa = PBXGroup;
 			children = (
+				7466C9F81F8D05290065DFB4 /* NSString+PCCDictToJSON.h */,
+				7466C9F91F8D05290065DFB4 /* NSString+PCCDictToJSON.m */,
 			);
 			path = NSExtension;
 			sourceTree = "<group>";
@@ -217,6 +474,10 @@
 		748D5FE61F7C9A4400244E3B /* UIExtension */ = {
 			isa = PBXGroup;
 			children = (
+				7466C9E91F8C86D70065DFB4 /* UIAlertController+show.h */,
+				7466C9E81F8C86D70065DFB4 /* UIAlertController+show.m */,
+				7466C9EB1F8C86D70065DFB4 /* UILabel+WXYLabel.h */,
+				7466C9EA1F8C86D70065DFB4 /* UILabel+WXYLabel.m */,
 			);
 			path = UIExtension;
 			sourceTree = "<group>";
@@ -231,6 +492,9 @@
 		748D5FE81F7C9B1700244E3B /* RemoteControl */ = {
 			isa = PBXGroup;
 			children = (
+				7447313C1F88C6F200D470FC /* Model */,
+				743122031F7FBBE000352168 /* View */,
+				74F99A411F7E48C600C99C97 /* Controller */,
 			);
 			path = RemoteControl;
 			sourceTree = "<group>";
@@ -258,8 +522,110 @@
 		74CF7F821F7CC9D000CFE6B4 /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				74309F221F8E448A00053CAA /* View */,
+				74F99A4C1F7E499600C99C97 /* Controller */,
 			);
 			path = Task;
+			sourceTree = "<group>";
+		};
+		74F99A411F7E48C600C99C97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74F99A491F7E497C00C99C97 /* PCCRemoteControlVC.h */,
+				74F99A4A1F7E497C00C99C97 /* PCCRemoteControlVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74F99A451F7E490300C99C97 /* Contorller */ = {
+			isa = PBXGroup;
+			children = (
+				74F99A461F7E493B00C99C97 /* PCCDocumentVC.h */,
+				74F99A471F7E493B00C99C97 /* PCCDocumentVC.m */,
+			);
+			path = Contorller;
+			sourceTree = "<group>";
+		};
+		74F99A4C1F7E499600C99C97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74F99A4D1F7E49AF00C99C97 /* PCCTaskVC.h */,
+				74F99A4E1F7E49AF00C99C97 /* PCCTaskVC.m */,
+				7470778A1F8E1231005076A1 /* PCCDownloadVC.h */,
+				7470778B1F8E1231005076A1 /* PCCDownloadVC.m */,
+				7470778D1F8E12E2005076A1 /* PCCUploadVC.h */,
+				7470778E1F8E12E2005076A1 /* PCCUploadVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74F99A501F7E49C800C99C97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74F99A511F7E49DC00C99C97 /* PCCSettingVC.h */,
+				74F99A521F7E49DC00C99C97 /* PCCSettingVC.m */,
+				7470777A1F8E0579005076A1 /* PCCQuestionVC.h */,
+				7470777B1F8E0579005076A1 /* PCCQuestionVC.m */,
+				7470777D1F8E05D7005076A1 /* PCCFeedbackVC.h */,
+				7470777E1F8E05D7005076A1 /* PCCFeedbackVC.m */,
+				747077801F8E05EB005076A1 /* PCCAboutVC.h */,
+				747077811F8E05EB005076A1 /* PCCAboutVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74F99A551F7E4F6900C99C97 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				74F99A581F7E4FE000C99C97 /* Model */,
+				74F99A571F7E4FD200C99C97 /* View */,
+				74F99A561F7E4F8A00C99C97 /* Controller */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		74F99A561F7E4F8A00C99C97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74F99A3B1F7E427C00C99C97 /* PCCComposeVC.h */,
+				74F99A3C1F7E427C00C99C97 /* PCCComposeVC.m */,
+				74309F331F9000B800053CAA /* PCCQuiteCmdVC.h */,
+				74309F341F9000B800053CAA /* PCCQuiteCmdVC.m */,
+				74309F361F9000FA00053CAA /* PCCDiskDocumentVC.h */,
+				74309F371F9000FA00053CAA /* PCCDiskDocumentVC.m */,
+				74309F391F90013D00053CAA /* PCCMouseControlVC.h */,
+				74309F3A1F90013D00053CAA /* PCCMouseControlVC.m */,
+				74309F3C1F90015B00053CAA /* PCCSearchVC.h */,
+				74309F3D1F90015B00053CAA /* PCCSearchVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74F99A571F7E4FD200C99C97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74F99A381F7E41DB00C99C97 /* PCCItemButton.h */,
+				74F99A391F7E41DB00C99C97 /* PCCItemButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74F99A581F7E4FE000C99C97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74F99A3E1F7E45F300C99C97 /* PCCMenuItem.h */,
+				74F99A3F1F7E45F300C99C97 /* PCCMenuItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A17FFEABE7C9C58778460250 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBC5B7D2624235FBB5312049 /* Pods-PCConnect.debug.xcconfig */,
+				A2888B38CAFE2A3B23E4531A /* Pods-PCConnect.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,9 +635,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 748D5F961F7BDA7D00244E3B /* Build configuration list for PBXNativeTarget "PCConnect" */;
 			buildPhases = (
+				0DC77AD72DDCBC56AB81E9B8 /* [CP] Check Pods Manifest.lock */,
 				748D5F661F7BDA7D00244E3B /* Sources */,
 				748D5F671F7BDA7D00244E3B /* Frameworks */,
 				748D5F681F7BDA7D00244E3B /* Resources */,
+				F0103EB9E0E02520E7A04CEB /* [CP] Embed Pods Frameworks */,
+				897E6917D63B2AF8126CEB5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -369,6 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				748D5F7A1F7BDA7D00244E3B /* LaunchScreen.storyboard in Resources */,
+				74F99A5A1F7E510800C99C97 /* Default-568h@2x.png in Resources */,
 				748D5F771F7BDA7D00244E3B /* Assets.xcassets in Resources */,
 				748D5F751F7BDA7D00244E3B /* Main.storyboard in Resources */,
 			);
@@ -390,16 +760,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DC77AD72DDCBC56AB81E9B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		897E6917D63B2AF8126CEB5C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PCConnect/Pods-PCConnect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0103EB9E0E02520E7A04CEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PCConnect/Pods-PCConnect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		748D5F661F7BDA7D00244E3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74309F281F8E714E00053CAA /* PCCFileCell.m in Sources */,
+				743122061F7FBC9700352168 /* PCCIconView.m in Sources */,
+				7470778C1F8E1231005076A1 /* PCCDownloadVC.m in Sources */,
+				747077821F8E05EB005076A1 /* PCCAboutVC.m in Sources */,
+				7447313F1F88C71C00D470FC /* PCCSocketModel.m in Sources */,
+				74309F201F8E1CF700053CAA /* LDSegmentView.m in Sources */,
 				74CF7F7B1F7CB82800CFE6B4 /* PCCNavgationController.m in Sources */,
+				74309F3B1F90013D00053CAA /* PCCMouseControlVC.m in Sources */,
+				74F99A4B1F7E497C00C99C97 /* PCCRemoteControlVC.m in Sources */,
+				74309F381F9000FA00053CAA /* PCCDiskDocumentVC.m in Sources */,
 				74CF7F811F7CB8CF00CFE6B4 /* PCCTabBar.m in Sources */,
+				74309F351F9000B800053CAA /* PCCQuiteCmdVC.m in Sources */,
+				7470777F1F8E05D7005076A1 /* PCCFeedbackVC.m in Sources */,
+				74F99A401F7E45F300C99C97 /* PCCMenuItem.m in Sources */,
+				74F99A3D1F7E427C00C99C97 /* PCCComposeVC.m in Sources */,
+				74309F251F8E44B100053CAA /* PCCHeaderFooterView.m in Sources */,
+				74309F2F1F8F8CB600053CAA /* PCCDocumentCell.m in Sources */,
 				748D5F7D1F7BDA7D00244E3B /* main.m in Sources */,
+				7466C9EF1F8C87650065DFB4 /* PCCTextField.m in Sources */,
 				748D5F6F1F7BDA7D00244E3B /* AppDelegate.m in Sources */,
+				74309F2C1F8E736D00053CAA /* PCCSearchView.m in Sources */,
+				74F99A481F7E493B00C99C97 /* PCCDocumentVC.m in Sources */,
+				74309F3E1F90015B00053CAA /* PCCSearchVC.m in Sources */,
+				7466C9FA1F8D05290065DFB4 /* NSString+PCCDictToJSON.m in Sources */,
+				74F99A4F1F7E49AF00C99C97 /* PCCTaskVC.m in Sources */,
+				74309F321F8F98CF00053CAA /* PCCCollectionView.m in Sources */,
+				7470778F1F8E12E2005076A1 /* PCCUploadVC.m in Sources */,
 				74CF7F781F7CB7FD00CFE6B4 /* PCCTabBarController.m in Sources */,
+				7466C9E71F8C7C650065DFB4 /* PCCLoginController.m in Sources */,
+				74F99A531F7E49DC00C99C97 /* PCCSettingVC.m in Sources */,
+				74F99A3A1F7E41DB00C99C97 /* PCCItemButton.m in Sources */,
+				74309F211F8E1CF700053CAA /* LDSegmentViewController.m in Sources */,
+				7470777C1F8E0579005076A1 /* PCCQuestionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,10 +1006,14 @@
 		};
 		748D5F971F7BDA7D00244E3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBC5B7D2624235FBB5312049 /* Pods-PCConnect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PCConnect/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = PCConnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,10 +1023,14 @@
 		};
 		748D5F981F7BDA7D00244E3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2888B38CAFE2A3B23E4531A /* Pods-PCConnect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PCConnect/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = PCConnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
