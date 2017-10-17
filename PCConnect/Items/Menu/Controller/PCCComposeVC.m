@@ -14,7 +14,9 @@
 #import "PCCQuiteCmdVC.h"
 #import "PCCMouseControlVC.h"
 #import "PCCDiskDocumentVC.h"
+#import "PCCSearchVC.h"
 #import "PCCNavgationController.h"
+#import "PCCTabBarController.h"
 
 
 @interface PCCComposeVC ()
@@ -39,6 +41,7 @@
     
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+ 
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeSystem];
     backButton.frame = CGRectMake(0, kScreenHeight - 40, kScreenWidht, 40);
     backButton.titleLabel.textColor =[UIColor colorWithRed:0.43f green:0.80f blue:0.98f alpha:1.00f];
@@ -49,6 +52,7 @@
     [self addBtn];
     
     self.time = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(upData) userInfo:nil repeats:YES];
+    
 }
 
 - (void)upData {
@@ -146,24 +150,33 @@
                 NSString *cmd = [NSString dictToJson:cmdDict];
                 NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,cmd,END_FLAG];
                 [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                
+                [self dismissViewControllerAnimated:YES completion:^{
+                    PCCDiskDocumentVC   *diskDocumentVC = [[PCCDiskDocumentVC alloc] init];
+                    [[self presentingVC].navigationController pushViewController:diskDocumentVC animated:NO];
+                }];
             };
                 
                 break;
             case 4:{
-            
+                
             };
                 
                 break;
             case 5:{
-                PCCQuiteCmdVC *fastCmdVC = [[PCCQuiteCmdVC alloc] init];
-                PCCNavgationController *nav = [[PCCNavgationController alloc] initWithRootViewController:fastCmdVC];
-                [self presentViewController:nav animated:NO completion:nil];
-//                [self dismissViewControllerAnimated:YES completion:nil];
+                [self dismissViewControllerAnimated:YES completion:^{
+                    PCCQuiteCmdVC *fastCmdVC = [[PCCQuiteCmdVC alloc] init];
+                    [[self presentingVC].navigationController pushViewController:fastCmdVC animated:NO];
+                }];
             };
                 
                 break;
-            case 6:
-                
+            case 6:{
+                [self dismissViewControllerAnimated:YES completion:^{
+                    PCCSearchVC *searchVC = [[PCCSearchVC alloc] init];
+                    [[self presentingVC].navigationController pushViewController:searchVC animated:NO];
+                }];
+            };
                 break;
             case 7:
                 
@@ -197,6 +210,36 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    NSLog(@"-----");
+}
+
+//获取当前屏幕显示的viewcontroller
+
+- (UIViewController *)presentingVC{
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal){
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows){
+            if (tmpWin.windowLevel == UIWindowLevelNormal){
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    UIViewController *result = window.rootViewController;
+    while (result.presentedViewController) {
+        result = result.presentedViewController;
+    }
+    if ([result isKindOfClass:[PCCTabBarController class]]) {
+        result = [(PCCTabBarController *)result selectedViewController];
+    }
+    if ([result isKindOfClass:[PCCNavgationController class]]) {
+        result = [(UINavigationController *)result topViewController];
+    }
+    return result;
 }
 
 /*

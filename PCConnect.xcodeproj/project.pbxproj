@@ -37,6 +37,7 @@
 		748D5F7D1F7BDA7D00244E3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F7C1F7BDA7D00244E3B /* main.m */; };
 		748D5F871F7BDA7D00244E3B /* PCConnectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F861F7BDA7D00244E3B /* PCConnectTests.m */; };
 		748D5F921F7BDA7D00244E3B /* PCConnectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F911F7BDA7D00244E3B /* PCConnectUITests.m */; };
+		74BC18D11F91E632005DA6EC /* PCCComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74BC18D01F91E632005DA6EC /* PCCComposeView.m */; };
 		74CF7F781F7CB7FD00CFE6B4 /* PCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F771F7CB7FD00CFE6B4 /* PCCTabBarController.m */; };
 		74CF7F7B1F7CB82800CFE6B4 /* PCCNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F7A1F7CB82800CFE6B4 /* PCCNavgationController.m */; };
 		74CF7F811F7CB8CF00CFE6B4 /* PCCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CF7F801F7CB8CF00CFE6B4 /* PCCTabBar.m */; };
@@ -142,6 +143,8 @@
 		748D5F8D1F7BDA7D00244E3B /* PCConnectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PCConnectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		748D5F911F7BDA7D00244E3B /* PCConnectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCConnectUITests.m; sourceTree = "<group>"; };
 		748D5F931F7BDA7D00244E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BC18CF1F91E632005DA6EC /* PCCComposeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCComposeView.h; sourceTree = "<group>"; };
+		74BC18D01F91E632005DA6EC /* PCCComposeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCComposeView.m; sourceTree = "<group>"; };
 		74CF7F761F7CB7FD00CFE6B4 /* PCCTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCTabBarController.h; sourceTree = "<group>"; };
 		74CF7F771F7CB7FD00CFE6B4 /* PCCTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCTabBarController.m; sourceTree = "<group>"; };
 		74CF7F791F7CB82800CFE6B4 /* PCCNavgationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCNavgationController.h; sourceTree = "<group>"; };
@@ -515,6 +518,8 @@
 			children = (
 				74CF7F7F1F7CB8CF00CFE6B4 /* PCCTabBar.h */,
 				74CF7F801F7CB8CF00CFE6B4 /* PCCTabBar.m */,
+				74BC18CF1F91E632005DA6EC /* PCCComposeView.h */,
+				74BC18D01F91E632005DA6EC /* PCCComposeView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -835,6 +840,7 @@
 				748D5F6F1F7BDA7D00244E3B /* AppDelegate.m in Sources */,
 				74309F2C1F8E736D00053CAA /* PCCSearchView.m in Sources */,
 				74F99A481F7E493B00C99C97 /* PCCDocumentVC.m in Sources */,
+				74BC18D11F91E632005DA6EC /* PCCComposeView.m in Sources */,
 				74309F3E1F90015B00053CAA /* PCCSearchVC.m in Sources */,
 				7466C9FA1F8D05290065DFB4 /* NSString+PCCDictToJSON.m in Sources */,
 				74F99A4F1F7E49AF00C99C97 /* PCCTaskVC.m in Sources */,

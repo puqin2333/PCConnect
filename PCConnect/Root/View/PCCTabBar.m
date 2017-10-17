@@ -9,6 +9,8 @@
 #import "PCCTabBar.h"
 #import "PCCComposeVC.h"
 #import "PCCMenuItem.h"
+#import "PCCComposeView.h"
+#import "PCCNavgationController.h"
 
 @interface PCCTabBar ()
 
@@ -63,6 +65,7 @@
 - (void)pushClick {
     
     PCCComposeVC *compopseVC = [[PCCComposeVC alloc] init];
+//    PCCComposeView *compose = [[PCCComposeView alloc] init];
     PCCMenuItem *item1 = [PCCMenuItem itemWithTitle:@"电源" image:[UIImage imageNamed:@"电源"]];
     PCCMenuItem *item2 = [PCCMenuItem itemWithTitle:@"截屏" image:[UIImage imageNamed:@"截屏"]];
     PCCMenuItem *item3 = [PCCMenuItem itemWithTitle:@"鼠标" image:[UIImage imageNamed:@"鼠标"]];
@@ -72,10 +75,52 @@
     PCCMenuItem *item7 = [PCCMenuItem itemWithTitle:@"搜索" image:[UIImage imageNamed:@"搜索"]];
     PCCMenuItem *item8 = [PCCMenuItem itemWithTitle:@"音量" image:[UIImage imageNamed:@"音量"]];
     PCCMenuItem *item9 = [PCCMenuItem itemWithTitle:@"语音" image:[UIImage imageNamed:@"语音"]];
-    
+
+//    PCCNavgationController *nav = [[PCCNavgationController alloc] initWithRootViewController:compopseVC];
     compopseVC.itemArray = @[item1, item2, item3, item4, item5, item6, item7, item8, item9];
     
+    compopseVC.modalPresentationStyle = UIModalPresentationCurrentContext;
+    self.owner.definesPresentationContext = YES;
+
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:compopseVC animated:YES completion:nil];
+    
+//    [self.owner presentViewController:compopseVC animated:YES completion:nil];
+//
+//    compose.itemArray = @[item1, item2, item3, item4, item5, item6, item7, item8, item9];
+//    compose.frame = CGRectMake(0, 0, kScreenWidht, kScreenHeight);
+//    compose.owner = self.owner;
+//    [self.owner.view addSubview:compose];
+//    NSLog(@"class is %@",self.owner);
+}
+
+//获取当前屏幕显示的viewcontroller
+- (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+    
+    return result;
 }
 
 @end

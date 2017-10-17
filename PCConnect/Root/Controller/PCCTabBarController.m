@@ -58,7 +58,10 @@
     PCCSettingVC *setting = [[PCCSettingVC alloc] init];
     [self addChildViewController:setting normalImage:[UIImage imageNamed:@"设置"] selectImage:[UIImage imageNamed:@"设置"] title:@"设置"];
     //     使用KVC替换原来的tabBar
-    [self setValue:[[PCCTabBar alloc]init] forKeyPath:@"tabBar"];
+    PCCTabBar *tabbar = [[PCCTabBar alloc] init];
+    tabbar.owner = [[PCCNavgationController alloc] init];
+    
+    [self setValue:tabbar forKeyPath:@"tabBar"];
     
 }
 

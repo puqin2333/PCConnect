@@ -46,9 +46,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"快捷工具";
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+    self.view.backgroundColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
+    
+    UIBarButtonItem *leftbtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBtn)];
+    self.navigationItem.leftBarButtonItem = leftbtn;
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
+
     self.cmdListArray = @[@"任务管理器",@"写字板",@"画图",@"视频播放器",@"记事本",@"讲述人",@"资源管理器",@"注册表",@"计算器",@"SQL SERVER",@"垃圾整理",@"屏幕键盘",@"ODBC数据源管理器",@"注销命令",@"共享文件夹管理器",@"辅助工具管理器"];
     [self cmdListTableView];
     
+}
+
+
+- (void)clickLeftBtn {
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
