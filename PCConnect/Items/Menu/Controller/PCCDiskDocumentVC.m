@@ -7,16 +7,79 @@
 //
 
 #import "PCCDiskDocumentVC.h"
+#import "PCConnect-Bridging-Header.h"
+#import "PCConnect-Swift.h"
+#import "PCCDiskCell.h"
+#import "PCCDiskDataModel.h"
 
-@interface PCCDiskDocumentVC ()
+@interface PCCDiskDocumentVC ()<UITableViewDelegate, UITableViewDataSource>
+
+@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) PCCDiskDataModel *dataModel;
 
 @end
 
 @implementation PCCDiskDocumentVC
 
+- (UITableView *)tableView {
+    if (!_tableView) {
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(5, 0, kScreenWidht - 10, kScreenHeight * 0.9) style: UITableViewStylePlain];
+        tableView.backgroundColor = [UIColor whiteColor];
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView.rowHeight = kScreenWidht * 0.6;
+        tableView.showsVerticalScrollIndicator = NO;
+        
+        UIView *view = [UIView new];
+        view.backgroundColor = [UIColor whiteColor];
+        tableView.tableFooterView = view;
+        self.tableView = tableView;
+        [self.view addSubview:_tableView];
+    }
+    return  _tableView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"磁盘管理";
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+    self.view.backgroundColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
+    
+    UIBarButtonItem *leftbtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBtn)];
+    self.navigationItem.leftBarButtonItem = leftbtn;
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    self.dataModel = [[PCCDiskDataModel alloc] init];
+    
+    [self tableView];
+}
+
+
+
+#pragma mark -- UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _dataModel.diskSpaceArray.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PCCDiskCell *cell = nil;
+    if (!cell) {
+        cell = [PCCDiskCell cellTableViewCell:tableView cellItem:_dataModel.diskPartitionArray[indexPath.row]];
+        cell.drawCenterText = @"新加卷1";
+        double data =  [_dataModel.diskSpaceArray[indexPath.row] doubleValue];
+        [cell upDateChartData:data];
+    }
+    return cell;
+}
+
+
+
+- (void)clickLeftBtn {
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

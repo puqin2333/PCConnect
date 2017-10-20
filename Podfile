@@ -6,5 +6,5 @@ pod "Masonry"
 pod "DZNEmptyDataSet"
 pod "SDWebImage"
 pod "CocoaAsyncSocket", "~> 7.4.3"
-
+pod "JSONModel"
 end

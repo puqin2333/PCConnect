@@ -28,7 +28,6 @@
     [super viewDidLoad];
     [self setUI];
     [self setConstraint];
-    _isOnline = NO;
 }
 
 - (void)setUI {
@@ -81,23 +80,25 @@
 - (void)setUpConnect {
     
     if (_isOnline == NO) {
+        
         PCCLoginController *loginVC = [[PCCLoginController alloc] init];
-        
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:loginVC animated:YES completion:nil];
-        
-        _isOnline = YES;
-        [self refreshIconView];
+        _isOnline = [PCCSocketModel shareInstance].isOnline;
     } else {
         
-        NSLog(@"当前已连接！");
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"当前已链接" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        [alertVC addAction:cancelAction];
+        [self presentViewController:alertVC animated:YES completion:nil];
     }
-    
     
 }
 
 // 与服务器断开连接
 - (void)setDownConnect {
     _isOnline = NO;
+    [PCCSocketModel shareInstance].isOnline = NO;
     [PCCSocketModel shareInstance].socket.userData = SocketOfflineByUser;
     [[PCCSocketModel shareInstance] cutOffCmdSocket];
     [self refreshIconView];
@@ -114,6 +115,10 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    _isOnline = [PCCSocketModel shareInstance].isOnline;
+    [self refreshIconView];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

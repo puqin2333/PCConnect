@@ -11,6 +11,7 @@
 @interface PCCLoginController : UIViewController
 
 @property(nonatomic, strong) UITextField *usernameTextField; // 用户名输入
-@property(nonatomic,strong) UITextField *passwordTextField;   // 密码输入
+@property(nonatomic, strong) UITextField *passwordTextField;   // 密码输入
+@property(nonatomic, assign) BOOL isOnLine;
 
 @end

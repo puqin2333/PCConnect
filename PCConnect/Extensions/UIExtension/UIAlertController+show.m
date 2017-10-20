@@ -13,9 +13,9 @@
 + (instancetype)showAlertWithTitle:(NSString *)title message:(NSString *)message{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
     [alertController addAction:cancelAction];
-    [alertController addAction:okAction];
+//    [alertController addAction:okAction];
     
     return alertController;
 }

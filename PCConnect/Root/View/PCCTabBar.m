@@ -9,7 +9,6 @@
 #import "PCCTabBar.h"
 #import "PCCComposeVC.h"
 #import "PCCMenuItem.h"
-#import "PCCComposeView.h"
 #import "PCCNavgationController.h"
 
 @interface PCCTabBar ()

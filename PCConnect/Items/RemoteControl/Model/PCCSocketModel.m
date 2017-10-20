@@ -13,12 +13,15 @@
 
 @end
 
-@implementation PCCSocketModel
+@implementation PCCSocketModel{
+    BOOL _firstLink;
+}
 
 + (instancetype)shareInstance {
     static PCCSocketModel *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        
         sharedInstance = [[self alloc] init];
     });
     return sharedInstance;
@@ -26,6 +29,7 @@
 
 - (void)socketConnectHost {
     _userOnline = NO;
+    _isOnline = NO;
     self.socket = [[AsyncSocket alloc] initWithDelegate:self];
     NSError *error = nil;
     [self.socket connectToHost:socketHost onPort:port withTimeout:3 error:&error];
@@ -81,20 +85,23 @@
 // 如果得到数据，会调用回调方法
 
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
-
-    NSLog(@"%@",data);
+    
     NSString *recStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    self.resultString = recStr;
-    NSLog(@"recStr -- %@",recStr);
+    if (![recStr isEqualToString:@""]) {
+        self.resultString = recStr;
+        NSLog(@"resultString -- %@",self.resultString);
+    }
     [self.socket readDataWithTimeout:-1 tag:1];
+    
+    
+
     
 }
 
 
-#pragma mark -- Action方法
+#pragma mark --target-Action方法
 
 - (void)longConnectToSocket {
-    NSLog(@"1");
     if (_userOnline == NO) {
         // 将命令转换成字节流
         NSString *usename = self.username;

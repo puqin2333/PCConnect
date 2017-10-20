@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.view.backgroundColor = [UIColor colorWithRed:0.01f green:0.76f blue:0.71f alpha:1.00f];
+    self.isOnLine = false;
     [self initUI];
 }
 
@@ -179,17 +180,31 @@
         [[PCCSocketModel shareInstance] cutOffCmdSocket];
         [PCCSocketModel shareInstance].socket.userData = SocketOfflineByServer;
         [[PCCSocketModel shareInstance] socketConnectHost];
-//        NSLog(@"%@",[PCCSocketModel shareInstance].resultString);
-//        if ([[PCCSocketModel shareInstance].resultString isEqualToString:@"|CONNECTED@SUCCESS|_@@|END@FLAG|@@"]) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-//        } else {
-//            NSLog(@"用户名或密码不正确！");
-//        }
+
+        if ([[PCCSocketModel shareInstance].resultString isEqualToString:@"|CONNECTED@SUCCESS|_@@|END@FLAG|@@"]) {
+            [PCCSocketModel shareInstance].isOnline = YES;
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+//                [PCCSocketModel shareInstance].isOnline = YES;
+                
+            }];
+        } else {
+            
+            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户名或密码不正确" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+            [alertVC addAction:cancelAction];
+            [self presentViewController:alertVC animated:YES completion:nil];
+            
+        }
     }
     else {
-        NSLog(@"请重新输入");
-//        UIAlertController *alertController = [UIAlertController showAlertWithTitle:@"登录失败" message:@"用户名或密码不可为空！"];
-////        [self presentViewController:alertController animated:YES completion:nil];
+        
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"登陆失败" message:@"用户名或密码错误" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        [alertVC addAction:cancelAction];
+        [self presentViewController:alertVC animated:YES completion:nil];
         
     }
 }

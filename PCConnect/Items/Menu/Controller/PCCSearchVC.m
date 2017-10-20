@@ -7,8 +7,11 @@
 //
 
 #import "PCCSearchVC.h"
+#import "PCCSearchView.h"
 
 @interface PCCSearchVC ()
+
+@property(nonatomic, strong) PCCSearchView *searchView;
 
 @end
 
@@ -16,8 +19,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.title = @"快捷搜索";
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+    self.view.backgroundColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1];
+    
+    UIBarButtonItem *leftbtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBtn)];
+    self.navigationItem.leftBarButtonItem = leftbtn;
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [self setUI];
+    
 }
+
+
+- (void)setUI {
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.searchView = [[PCCSearchView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidht, kScreenHeight * 0.9)];
+    [self.view addSubview:_searchView];
+}
+
+
+- (void)clickLeftBtn {
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

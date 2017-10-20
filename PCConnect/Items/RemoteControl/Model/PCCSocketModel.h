@@ -27,6 +27,7 @@ enum{
 @property(nonatomic, strong) NSString *password;
 @property(nonatomic, strong) NSString *resultString;
 @property(nonatomic, assign) BOOL      userOnline;
+@property(nonatomic, assign) BOOL      isOnline;
 //@property(nonatomic, copy)   void      (^cmdConnectSuccess)();
 //@property(nonatomic, copy)   void      (^cmdReceiveData)(NSDictionary *dic);
 @property(nonatomic, strong) AsyncSocket    *socket;       // socket

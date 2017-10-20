@@ -10,19 +10,23 @@
 #import "PCCItemButton.h"
 #import "PCCSocketModel.h"
 #import "PCCMenuItem.h"
-#import "NSString+PCCDictToJSON.h"
 #import "PCCQuiteCmdVC.h"
 #import "PCCMouseControlVC.h"
 #import "PCCDiskDocumentVC.h"
 #import "PCCSearchVC.h"
+#import "PCCShootScreenVC.h"
 #import "PCCNavgationController.h"
 #import "PCCTabBarController.h"
+#import "PCCCommandModel.h"
+#import "UIAlertController+show.h"
 
 
 @interface PCCComposeVC ()
 
 @property(nonatomic, strong) NSMutableArray  *btnArray;
 @property(nonatomic, strong) NSTimer         *time;
+@property(nonatomic, strong) UIView        *sliderView;
+@property(nonatomic, strong) UISlider      *slider;
 @property(nonatomic, assign) int              buttonNum;
 
 @end
@@ -41,7 +45,13 @@
     
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
- 
+
+    [self setUI];
+    
+}
+
+- (void)setUI {
+    
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeSystem];
     backButton.frame = CGRectMake(0, kScreenHeight - 40, kScreenWidht, 40);
     backButton.titleLabel.textColor =[UIColor colorWithRed:0.43f green:0.80f blue:0.98f alpha:1.00f];
@@ -53,8 +63,19 @@
     
     self.time = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(upData) userInfo:nil repeats:YES];
     
+    UIView *sliderView = [[UIView alloc] initWithFrame:CGRectMake(kScreenWidht * 0.05, kScreenHeight * 0.15, kScreenWidht * 0.9, kScreenHeight * 0.08)];
+    sliderView.backgroundColor = [UIColor colorWithRed:0.25f green:0.33f blue:0.35f alpha:0.60f];
+
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(kScreenWidht * 0.05, 0, kScreenWidht * 0.8, kScreenHeight * 0.08)];
+    slider.minimumValue = 0;
+    slider.maximumValue = 10;
+    slider.value = (slider.minimumValue + slider.maximumValue) / 2;
+    self.slider = slider;
+    self.sliderView = sliderView;
+    
 }
 
+#pragma mark -- button的实现
 - (void)upData {
     
     if (self.buttonNum == self.btnArray.count) {
@@ -110,6 +131,8 @@
     }
 }
 
+
+#pragma mark --Target-Action
 - (void)btnClick:(UIButton *)btn {
     
     [UIView animateWithDuration:0.5 animations:^{
@@ -121,34 +144,74 @@
 //    } else {
         switch (btn.tag) {
             case 0:{
-                NSDictionary *cmdDict = @{@"describe" : @"",
-                                          @"isback" : @true,
-                                          @"type" : @"-1"};
-                NSString *cmd = [NSString dictToJson:cmdDict];
-                NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,cmd,END_FLAG];
-                [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                
+                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否要关机" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+                UIAlertAction *oKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"-1" describe:@"" isback:true];
+                    NSString *commandStr = [commandModel toJSONString];
+                    NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+                    [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                }];
+                [alertVC addAction:cancelAction];
+                [alertVC addAction:oKAction];
+                [self presentViewController:alertVC animated:YES completion:nil];
             };
                 
                 break;
             case 1:{
-//                NSDictionary *cmdDict = @{@"describe" : @"",
-//                                          @"isback" : @true,
-//                                          @"type" : @"4"};
-//                NSString *cmd = [NSString dictToJson:cmdDict];
-//                NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,cmd,END_FLAG];
-//                [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+                [formatter setDateFormat:@"YYYYMMddHHmmss"];
+                NSDate *nowDate = [NSDate date];
+                NSString *nowtimeStr = [formatter stringFromDate:nowDate];
+                
+                PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"2" describe:nowtimeStr isback:false];
+                NSString *commandStr = [commandModel toJSONString];
+                NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+                [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                
+                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否截屏" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+                [alertVC addAction:cancelAction];
+                
+                UIAlertAction *oKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [self dismissViewControllerAnimated:YES completion:^{
+                        
+                        PCCShootScreenVC *shootScreenVC = [[PCCShootScreenVC alloc] init];
+                        [[self presentingVC].navigationController pushViewController:shootScreenVC animated:NO];
+                    }];
+                }];
+                [alertVC addAction:oKAction];
+                [self presentViewController:alertVC animated:YES completion:nil];
+                
+
             };
                 
                 break;
-            case 2:
+            case 2:{
+                
+                [self dismissViewControllerAnimated:YES completion:^{
+                    
+                    PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"-1" describe:@"" isback:true];
+                    NSString *commandStr = [commandModel toJSONString];
+                    NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+                    [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                    
+                    PCCMouseControlVC *mouseVC = [[PCCMouseControlVC alloc] init];
+                    [[self presentingVC].navigationController pushViewController:mouseVC animated:NO];
+                }];
+                }
                 
                 break;
             case 3:{
-                NSDictionary *cmdDict = @{@"describe" : @"",
-                                          @"isback" : @true,
-                                          @"type" : @"4"};
-                NSString *cmd = [NSString dictToJson:cmdDict];
-                NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,cmd,END_FLAG];
+                
+                PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"4" describe:@"" isback:true];
+                NSString *commandStr = [commandModel toJSONString];
+                NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
                 [[PCCSocketModel shareInstance] sendCmd:cmdStr];
                 
                 [self dismissViewControllerAnimated:YES completion:^{
@@ -159,7 +222,10 @@
                 
                 break;
             case 4:{
-                
+                [self.sliderView addSubview:self.slider];
+                [self.view addSubview:self.sliderView];
+                [self.slider addTarget:self action:@selector(lightValueChanged:) forControlEvents:UIControlEventValueChanged];
+               
             };
                 
                 break;
@@ -178,13 +244,16 @@
                 }];
             };
                 break;
-            case 7:
+            case 7:{
+                [self.sliderView addSubview:self.slider];
+                [self.view addSubview:self.sliderView];
+                [self.slider addTarget:self action:@selector(voliceValueChanged:) forControlEvents:UIControlEventValueChanged];
+            };
                 
                 break;
-            case 8:
+            case 8:{
                 
-                break;
-            case 9:
+            }
                 
                 break;
             default:
@@ -194,8 +263,7 @@
     
 
 }
-- (void)btnClickT:(UIButton *)btn
-{
+- (void)btnClickT:(UIButton *)btn {
     [UIView animateWithDuration:0.5 animations:^{
         btn.alpha = 1;
         btn.transform = CGAffineTransformMakeScale(1, 1);
@@ -207,14 +275,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// slider 的 action
+- (void)lightValueChanged:(id)sender {
+    
 }
 
-- (void)dealloc {
-    NSLog(@"-----");
+- (void)voliceValueChanged:(id)sender {
+    
 }
+
+
 
 //获取当前屏幕显示的viewcontroller
 
@@ -240,6 +310,18 @@
         result = [(UINavigationController *)result topViewController];
     }
     return result;
+}
+
+// touch事件 -- 当点击空白处，slider移除
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.sliderView removeFromSuperview];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*
