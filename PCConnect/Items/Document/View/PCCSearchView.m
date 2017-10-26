@@ -21,6 +21,7 @@
         fileSearchbar.showsCancelButton = NO;
         fileSearchbar.barTintColor = [UIColor colorWithRed:1.00f green:0.60f blue:0.00f alpha:1.00f];
         fileSearchbar.placeholder = @"搜索查询的内容";
+        fileSearchbar.delegate = self;
         
         for (UIView *subView in fileSearchbar.subviews) {
             if ([subView isKindOfClass:[UIView  class]]) {

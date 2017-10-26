@@ -1,35 +1,33 @@
 //
-//  PCCSocketModel.m
+//  PCCSocketCmd.m
 //  PCConnect
 //
-//  Created by 满脸胡茬的怪蜀黍 on 2017/10/7.
+//  Created by 满脸胡茬的怪蜀黍 on 2017/10/24.
 //  Copyright © 2017年 满脸胡茬的怪蜀黍. All rights reserved.
 //
 
-#import "PCCSocketModel.h"
+#import "PCCSocketCmd.h"
 
-
-@interface PCCSocketModel ()
-
-@end
-
-@implementation PCCSocketModel{
-    BOOL _firstLink;
-}
+@implementation PCCSocketCmd
 
 + (instancetype)shareInstance {
-    static PCCSocketModel *sharedInstance = nil;
+    static PCCSocketCmd *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
         sharedInstance = [[self alloc] init];
+        sharedInstance.isOnline = NO;
     });
     return sharedInstance;
+    
 }
 
 - (void)socketConnectHost {
     _userOnline = NO;
-    _isOnline = NO;
+    
+    //配置socket的运行循环模式
+    [self.socket setRunLoopModes:[NSArray arrayWithObject:NSRunLoopCommonModes]];
+    
     self.socket = [[AsyncSocket alloc] initWithDelegate:self];
     NSError *error = nil;
     [self.socket connectToHost:socketHost onPort:port withTimeout:3 error:&error];
@@ -49,12 +47,14 @@
     NSData *data = [cmdString dataUsingEncoding:NSUTF8StringEncoding];
     int dateLength =CFSwapInt32BigToHost((uint32_t)data.length);// 需要转化大小端
     NSData *cmdLength = [NSData dataWithBytes:&dateLength length:sizeof(dateLength)];
-    [self.socket writeData:cmdLength withTimeout:1 tag:1];
-    [self.socket writeData:data withTimeout:1 tag:1];
-
-//    [self.socket readDataToLength:4 withTimeout:-1 tag:1];
+    [self.socket writeData:cmdLength withTimeout:-1 tag:1];
+    [self.socket writeData:data withTimeout:-1 tag:1];
+    
+    //    [self.socket readDataToLength:4 withTimeout:-1 tag:1];
     [self.socket readDataWithTimeout:-1 tag:1];
+    //    [self onSocket:self.socket didWriteDataWithTag:1];
 }
+
 #pragma mark -- AsyncSocketDelegate
 
 // 连接成功回调
@@ -62,18 +62,17 @@
     NSLog(@"socket 连接成功！");
     // 每隔30s向服务器发送心跳包
     self.connectTimer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(longConnectToSocket) userInfo:nil repeats:YES];
-//    /*
-//     * 将定时器的消息发送到目标。
-//     * 你可以使用这个方法来触发一个重复的计时器，而不会打断它的常规射击时间表。
-//     * 如果定时器是不重复的，它会在发射后自动失效，即使它的预定的发射日期还没有到达。
-//     */
+    //    /*
+    //     * 将定时器的消息发送到目标。
+    //     * 你可以使用这个方法来触发一个重复的计时器，而不会打断它的常规射击时间表。
+    //     * 如果定时器是不重复的，它会在发射后自动失效，即使它的预定的发射日期还没有到达。
+    //     */
     [self.connectTimer fire];
     [self longConnectToSocket];
 }
 
 // 重连
 - (void)onSocketDidDisconnect:(AsyncSocket *)sock {
-    NSLog(@"sorry the connect is failure %ld",sock.userData);
     if (sock.userData == SocketOfflineByServer) {
         // 服务器掉线，重连
         [self socketConnectHost];
@@ -82,26 +81,24 @@
     }
 }
 
+////发送消息成功之后回调
+//- (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag {
+//    [self.socket readDataWithTimeout:-1 tag:1];
+//}
+
 // 如果得到数据，会调用回调方法
-
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+    [self.cmdDelegate getCmdDataMessage:data];
     
-    NSString *recStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    if (![recStr isEqualToString:@""]) {
-        self.resultString = recStr;
-        NSLog(@"resultString -- %@",self.resultString);
-    }
     [self.socket readDataWithTimeout:-1 tag:1];
-    
-    
-
     
 }
 
 
-#pragma mark --target-Action方法
+#pragma mark --Target-Action方法
 
 - (void)longConnectToSocket {
+    
     if (_userOnline == NO) {
         // 将命令转换成字节流
         NSString *usename = self.username;
@@ -114,13 +111,13 @@
          */
         int dateLength =CFSwapInt32BigToHost((uint32_t)data.length);// 需要转化大小端
         NSData *cmdLength = [NSData dataWithBytes:&dateLength length:sizeof(dateLength)];
-        [self.socket writeData:cmdLength withTimeout:1 tag:1];
-        [self.socket writeData:data withTimeout:1 tag:1];
+        [self.socket writeData:cmdLength withTimeout:-1 tag:1];
+        [self.socket writeData:data withTimeout:-1 tag:1];
         
         [self.socket readDataToLength:4 withTimeout:-1 tag:1];
         _userOnline = YES;
     } else {
-
+        
     }
 }
 

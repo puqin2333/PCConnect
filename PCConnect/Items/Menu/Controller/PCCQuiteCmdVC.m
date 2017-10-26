@@ -8,11 +8,16 @@
 
 #import "PCCQuiteCmdVC.h"
 #import <Masonry.h>
+#import "PCCCommandModel.h"
+#import "PCCSocketCmd.h"
 
-@interface PCCQuiteCmdVC ()<UITableViewDelegate, UITableViewDataSource>
+@interface PCCQuiteCmdVC ()<UITableViewDelegate, UITableViewDataSource>{
+    BOOL _SwitchIsOn;
+}
 
 @property(nonatomic, strong) UITableView *cmdListTableView;
 @property(nonatomic, strong) NSArray *cmdListArray;
+@property(nonatomic ,strong) UISwitch *switchView;
 
 @end
 
@@ -23,7 +28,7 @@
     if (!_cmdListTableView) {
         UITableView *cmdListTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         cmdListTableView.backgroundColor = [UIColor whiteColor];
-        cmdListTableView.delegate = self;
+//        cmdListTableView.delegate = self;
         cmdListTableView.dataSource = self;
         cmdListTableView.rowHeight = kScreenHeight * 0.06;
         cmdListTableView.scrollEnabled = YES;
@@ -37,9 +42,7 @@
             make.top.equalTo(self.view.mas_top);
             //make.bottom.equalTo(self.tabBarController.tabBar.mas_top).with.offset(2);
             make.bottom.equalTo(self.view.mas_bottom);
-        }];
-        
-        
+        }];     
     }
     return _cmdListTableView;
 }
@@ -67,7 +70,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark -- UITableViewDelegate
@@ -82,7 +85,6 @@
     return _cmdListArray.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"cell";
@@ -92,6 +94,7 @@
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         UISwitch *switchView = [[UISwitch alloc] init];
         switchView.on = NO;
+        switchView.tag = indexPath.row;
         [switchView addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
         [cell.contentView addSubview: switchView];
         [switchView mas_makeConstraints:^(MASConstraintMaker *make){
@@ -107,14 +110,26 @@
     return cell;
 }
 
-#pragma mark-- action
+#pragma mark-- Target-Action
 - (void)switchAction:(id)sender {
+    
     UISwitch *switchButton = (UISwitch*)sender;
     BOOL isButtonOn = [switchButton isOn];
     if (isButtonOn) {
-        NSLog(@"开");
+        
+        NSUInteger i = 100 + switchButton.tag;
+        NSString *typeString = [NSString stringWithFormat:@"%lu",i];
+        PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:typeString isback:false];
+        NSString *commandStr = [commandModel toJSONString];
+        NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+        [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
     }else {
-        NSLog(@"关");
+        NSUInteger i = 200 + switchButton.tag;
+        NSString *typeString = [NSString stringWithFormat:@"%lu",i];
+        PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:typeString isback:false];
+        NSString *commandStr = [commandModel toJSONString];
+        NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+        [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
     }
 }
 

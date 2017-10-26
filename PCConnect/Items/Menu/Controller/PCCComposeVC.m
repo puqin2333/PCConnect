@@ -8,7 +8,7 @@
 
 #import "PCCComposeVC.h"
 #import "PCCItemButton.h"
-#import "PCCSocketModel.h"
+#import "PCCSocketCmd.h"
 #import "PCCMenuItem.h"
 #import "PCCQuiteCmdVC.h"
 #import "PCCMouseControlVC.h"
@@ -124,7 +124,7 @@
         btn.transform = CGAffineTransformMakeTranslation(0, self.view.bounds.size.height);
         
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
-        [btn addTarget:self action:@selector(btnClickT:) forControlEvents:UIControlEventTouchUpInside];
+//        [btn addTarget:self action:@selector(btnClickT:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.btnArray addObject:btn];
         [self.view addSubview:btn];
@@ -135,31 +135,37 @@
 #pragma mark --Target-Action
 - (void)btnClick:(UIButton *)btn {
     
-    [UIView animateWithDuration:0.5 animations:^{
-        btn.transform = CGAffineTransformMakeScale(1.2, 1.2);
-    }];
     
-//    if ([PCCSocketModel shareInstance].userOnline == NO) {
-//        NSLog(@"当前未上线，请先链接电脑！");
-//    } else {
+    if ([PCCSocketCmd shareInstance].isOnline == NO) {
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"当前未连接，请连接后重试！" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:nil];
+        [alertVC addAction:cancelAction];
+        [self presentViewController:alertVC animated:YES completion:nil];
+    } else {
         switch (btn.tag) {
+                
             case 0:{
+                PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"-1" describe:@"" isback:true];
+                NSString *commandStr = [commandModel toJSONString];
+                NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+                [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
                 
                 UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否要关机" preferredStyle:UIAlertControllerStyleAlert];
                 
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
                 UIAlertAction *oKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"-1" describe:@"" isback:true];
+                    PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"0" describe:@"" isback:false];
                     NSString *commandStr = [commandModel toJSONString];
                     NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
-                    [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                    [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
                 }];
                 [alertVC addAction:cancelAction];
                 [alertVC addAction:oKAction];
                 [self presentViewController:alertVC animated:YES completion:nil];
             };
-                
                 break;
+                
             case 1:{
                 
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -171,9 +177,9 @@
                 PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"2" describe:nowtimeStr isback:false];
                 NSString *commandStr = [commandModel toJSONString];
                 NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
-                [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
                 
-                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否截屏" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否回传截屏" preferredStyle:UIAlertControllerStyleAlert];
                 
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
                 [alertVC addAction:cancelAction];
@@ -181,62 +187,66 @@
                 UIAlertAction *oKAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     [self dismissViewControllerAnimated:YES completion:^{
                         
+                        PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"2" describe:nowtimeStr isback:true];
+                        NSString *commandStr = [commandModel toJSONString];
+                        NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+                        
                         PCCShootScreenVC *shootScreenVC = [[PCCShootScreenVC alloc] init];
+                        shootScreenVC.shootScreen = cmdStr;
                         [[self presentingVC].navigationController pushViewController:shootScreenVC animated:NO];
                     }];
                 }];
                 [alertVC addAction:oKAction];
                 [self presentViewController:alertVC animated:YES completion:nil];
-                
-
             };
-                
                 break;
+                
             case 2:{
+    
+                PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"-1" describe:@"" isback:true];
+                NSString *commandStr = [commandModel toJSONString];
+                NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+                [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
                 
                 [self dismissViewControllerAnimated:YES completion:^{
-                    
-                    PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"-1" describe:@"" isback:true];
-                    NSString *commandStr = [commandModel toJSONString];
-                    NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
-                    [[PCCSocketModel shareInstance] sendCmd:cmdStr];
                     
                     PCCMouseControlVC *mouseVC = [[PCCMouseControlVC alloc] init];
                     [[self presentingVC].navigationController pushViewController:mouseVC animated:NO];
                 }];
                 }
-                
                 break;
-            case 3:{
                 
+            case 3:{
                 PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"4" describe:@"" isback:true];
                 NSString *commandStr = [commandModel toJSONString];
                 NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
-                [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+                [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
                 
                 [self dismissViewControllerAnimated:YES completion:^{
                     PCCDiskDocumentVC   *diskDocumentVC = [[PCCDiskDocumentVC alloc] init];
                     [[self presentingVC].navigationController pushViewController:diskDocumentVC animated:NO];
                 }];
             };
-                
                 break;
+                
             case 4:{
                 [self.sliderView addSubview:self.slider];
                 [self.view addSubview:self.sliderView];
                 [self.slider addTarget:self action:@selector(lightValueChanged:) forControlEvents:UIControlEventValueChanged];
                
             };
-                
                 break;
+                
             case 5:{
                 [self dismissViewControllerAnimated:YES completion:^{
                     PCCQuiteCmdVC *fastCmdVC = [[PCCQuiteCmdVC alloc] init];
                     [[self presentingVC].navigationController pushViewController:fastCmdVC animated:NO];
                 }];
-            };
                 
+            };
+   
                 break;
+                
             case 6:{
                 [self dismissViewControllerAnimated:YES completion:^{
                     PCCSearchVC *searchVC = [[PCCSearchVC alloc] init];
@@ -244,10 +254,13 @@
                 }];
             };
                 break;
+                
             case 7:{
+                
                 [self.sliderView addSubview:self.slider];
                 [self.view addSubview:self.sliderView];
                 [self.slider addTarget:self action:@selector(voliceValueChanged:) forControlEvents:UIControlEventValueChanged];
+                
             };
                 
                 break;
@@ -256,9 +269,10 @@
             }
                 
                 break;
+                
             default:
                 break;
-//        }
+        }
     }
     
 

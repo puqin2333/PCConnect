@@ -11,8 +11,10 @@
 #import "PCConnect-Swift.h"
 #import "PCCDiskCell.h"
 #import "PCCDiskDataModel.h"
+#import "PCCFileShowVC.h"
+#import "PCCFileMessageModel.h"
 
-@interface PCCDiskDocumentVC ()<UITableViewDelegate, UITableViewDataSource>
+@interface PCCDiskDocumentVC ()<UITableViewDelegate, UITableViewDataSource,ChartViewDelegate,UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) PCCDiskDataModel *dataModel;
@@ -29,6 +31,7 @@
         tableView.dataSource = self;
         tableView.rowHeight = kScreenWidht * 0.6;
         tableView.showsVerticalScrollIndicator = NO;
+        tableView.allowsSelection = YES;
         
         UIView *view = [UIView new];
         view.backgroundColor = [UIColor whiteColor];
@@ -41,6 +44,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataModel = [[PCCDiskDataModel alloc] init];
+    
     
     self.navigationItem.title = @"磁盘管理";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil]];
@@ -49,12 +54,20 @@
     UIBarButtonItem *leftbtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBtn)];
     self.navigationItem.leftBarButtonItem = leftbtn;
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadTableViewDataSource:) name:@"diskData" object:nil];
+
+ 
+}
+
+// 通知
+- (void)loadTableViewDataSource:(NSNotification *)notification{
     
-    self.dataModel = [[PCCDiskDataModel alloc] init];
+    self.dataModel.diskPartitionArray = notification.userInfo[@"drive"];
+    self.dataModel.diskSpaceArray = notification.userInfo[@"useInfo"];
+    self.dataModel.diskArray = notification.userInfo[@"path"];
     
     [self tableView];
 }
-
 
 
 #pragma mark -- UITableViewDataSource
@@ -68,23 +81,65 @@
     
     PCCDiskCell *cell = nil;
     if (!cell) {
-        cell = [PCCDiskCell cellTableViewCell:tableView cellItem:_dataModel.diskPartitionArray[indexPath.row]];
-        cell.drawCenterText = @"新加卷1";
-        double data =  [_dataModel.diskSpaceArray[indexPath.row] doubleValue];
-        [cell upDateChartData:data];
+        cell = [PCCDiskCell cellTableViewCell:tableView cellItem:_dataModel.diskPartitionArray[indexPath.row] diskSpace:[_dataModel.diskSpaceArray[indexPath.row] doubleValue]];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if (cell.pieChartView.isDrawHoleEnabled == YES) {
+            cell.pieChartView.drawCenterTextEnabled = YES;//是否显示中间文字
+            
+            //富文本
+            
+            NSMutableAttributedString *centerText = [[NSMutableAttributedString alloc] initWithString:_dataModel.diskPartitionArray[indexPath.row]];
+            [centerText setAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:16],
+                                        NSForegroundColorAttributeName: [UIColor orangeColor]}
+                                range:NSMakeRange(0, centerText.length)];
+            cell.pieChartView.centerAttributedText = centerText;
+        }
+        [cell upDateChartData:[_dataModel.diskSpaceArray[indexPath.row] doubleValue]];
     }
     return cell;
 }
 
+#pragma mark -- UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    PCCFileShowVC *fileListVC = [[PCCFileShowVC alloc] init];
+    fileListVC.describe = _dataModel.diskArray[indexPath.row];
+    [self.navigationController pushViewController:fileListVC animated:NO];
+}
+
+#pragma mark -- ChartViewDelegate
+
+- (void)chartValueSelected:(ChartViewBase * __nonnull)chartView entry:(ChartDataEntry * __nonnull)entry highlight:(ChartHighlight * __nonnull)highlight {
+    
+}
+
+- (void)chartValueNothingSelected:(ChartViewBase * __nonnull)chartView {
+    NSLog(@"chartValueNothingSelected");
+}
+
+
+#pragma mark -- Target_Action
 
 - (void)clickLeftBtn {
+    
     [self.navigationController popViewControllerAnimated:NO];
+    
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+//    self.dataModel = [[PCCDiskDataModel alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 /*

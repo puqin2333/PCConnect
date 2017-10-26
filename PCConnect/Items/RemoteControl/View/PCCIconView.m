@@ -26,7 +26,7 @@
 
 - (void)setUI {
     
-    UIImageView *iconView = [[UIImageView alloc] init];
+    UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image"]];
     iconView.backgroundColor = [UIColor grayColor];
     iconView.layer.masksToBounds = YES;
     iconView.layer.cornerRadius = kScreenWidht * 0.15;

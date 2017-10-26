@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PCCSocketModel.h"
+#import "PCCSocketCmd.h"
 
 @interface PCCRemoteControlVC : UIViewController
 

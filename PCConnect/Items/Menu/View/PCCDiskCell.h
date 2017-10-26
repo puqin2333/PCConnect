@@ -18,7 +18,7 @@
 @property(nonatomic, strong) NSArray *dataArray;
 
 
-+ (instancetype)cellTableViewCell:(UITableView *)tableView cellItem:(NSString *)item ;
++ (instancetype)cellTableViewCell:(UITableView *)tableView cellItem:(NSString *)item diskSpace:(double)scale;
 - (void)upDateChartData:(double)scale;
 
 @end

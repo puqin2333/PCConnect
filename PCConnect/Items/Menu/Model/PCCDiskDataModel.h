@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PCCSocketCmd.h"
 
-@interface PCCDiskDataModel : NSObject
+@interface PCCDiskDataModel : NSObject <PCCSocketCmdDelegate>
 
-@property(nonatomic, strong) NSArray *diskSpaceArray;
-@property(nonatomic, strong) NSArray *diskPartitionArray;
-
+@property(nonatomic, strong) NSMutableArray *diskSpaceArray; // 磁盘空间大小
+@property(nonatomic, strong) NSMutableArray *diskPartitionArray; // 磁盘分区名称
+@property(nonatomic, strong) NSMutableArray *diskArray; //  磁盘目录
 @end

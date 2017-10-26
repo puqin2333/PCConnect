@@ -9,10 +9,11 @@
 #import "PCCLoginController.h"
 #import <Masonry.h>
 #import "PCCTextField.h"
-#import "PCCSocketModel.h"
+#import "PCCSocketCmd.h"
+#import "PCCSocketFile.h"
 #import "UIAlertController+show.h"
 
-@interface PCCLoginController ()<UITextFieldDelegate>
+@interface PCCLoginController ()<UITextFieldDelegate,PCCSocketCmdDelegate>
 
 @property(nonatomic, strong) UIButton *logInButton; // 登陆
 @property(nonatomic, strong) UIButton *noLogInButton; // 取消登陆
@@ -174,29 +175,15 @@
     
     if (![_usernameTextField.text isEqualToString:@""] && ![_passwordTextField.text isEqualToString:@""]) {
         
-        [PCCSocketModel shareInstance].username = self.usernameTextField.text;
-        [PCCSocketModel shareInstance].password = self.passwordTextField.text;
-        [PCCSocketModel shareInstance].socket.userData = SocketOfflineByUser;
-        [[PCCSocketModel shareInstance] cutOffCmdSocket];
-        [PCCSocketModel shareInstance].socket.userData = SocketOfflineByServer;
-        [[PCCSocketModel shareInstance] socketConnectHost];
-
-        if ([[PCCSocketModel shareInstance].resultString isEqualToString:@"|CONNECTED@SUCCESS|_@@|END@FLAG|@@"]) {
-            [PCCSocketModel shareInstance].isOnline = YES;
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-//                [PCCSocketModel shareInstance].isOnline = YES;
-                
-            }];
-        } else {
-            
-            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户名或密码不正确" preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
-            [alertVC addAction:cancelAction];
-            [self presentViewController:alertVC animated:YES completion:nil];
-            
-        }
+        [PCCSocketCmd shareInstance].username = self.usernameTextField.text;
+        [PCCSocketCmd shareInstance].password = self.passwordTextField.text;
+        [PCCSocketCmd shareInstance].socket.userData = SocketOfflineByUser;
+        [[PCCSocketCmd shareInstance] cutOffCmdSocket];
+        [PCCSocketCmd shareInstance].socket.userData = SocketOfflineByServer;
+        [[PCCSocketCmd shareInstance] socketConnectHost];
+        [PCCSocketCmd shareInstance].cmdDelegate = self;
+//        
+        
     }
     else {
         
@@ -209,10 +196,45 @@
     }
 }
 
+
 - (void)noLogIn {
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark -- SocketDelegate
+
+- (void)getCmdDataMessage:(NSData *)data {
+    int a;
+    if (data.length <= 4) {
+        int i;
+        [data getBytes: &i length: sizeof(i)];
+        a = CFSwapInt32BigToHost((uint32_t)i);
+        return;
+    } else {
+        NSString *recStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"recStr--%@",recStr);
+        if ([recStr isEqualToString:@"|CONNECTED@SUCCESS|_@@|END@FLAG|@@"]) {
+            [PCCSocketCmd shareInstance].isOnline = YES;
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+                //                [PCCSocketModel shareInstance].isOnline = YES;
+                
+            }];
+        } else {
+            
+            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户名或密码不正确" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [[PCCSocketCmd shareInstance] cutOffCmdSocket];
+            }];
+            [alertVC addAction:cancelAction];
+            [self presentViewController:alertVC animated:YES completion:nil];
+        }
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

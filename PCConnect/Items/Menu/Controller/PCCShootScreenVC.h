@@ -10,4 +10,6 @@
 
 @interface PCCShootScreenVC : UIViewController
 
+@property(nonatomic, strong) NSString *shootScreen;
+
 @end

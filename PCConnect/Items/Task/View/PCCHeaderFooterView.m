@@ -21,11 +21,8 @@
         [self setUI];
     }
     _titleLabel.text = itemTitle;
-//    if (type == HerderStyleNone) {
-        _titleLabel.textAlignment = NSTextAlignmentLeft;
-//    } else {
-//        _titleLabel.textAlignment = NSTextAlignmentCenter;
-//    }
+    _titleLabel.textAlignment = NSTextAlignmentLeft;
+
     _section = section;
     _canFold = canFold;
     if (canFold) {

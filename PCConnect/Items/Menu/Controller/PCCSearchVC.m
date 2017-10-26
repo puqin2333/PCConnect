@@ -8,8 +8,10 @@
 
 #import "PCCSearchVC.h"
 #import "PCCSearchView.h"
+#import "PCCSocketCmd.h"
+#import "PCCCommandModel.h"
 
-@interface PCCSearchVC ()
+@interface PCCSearchVC ()<UISearchBarDelegate>
 
 @property(nonatomic, strong) PCCSearchView *searchView;
 
@@ -18,6 +20,7 @@
 @implementation PCCSearchVC
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.navigationItem.title = @"快捷搜索";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil]];
@@ -26,28 +29,40 @@
     UIBarButtonItem *leftbtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBtn)];
     self.navigationItem.leftBarButtonItem = leftbtn;
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
+   
     [self setUI];
-    
 }
 
 
 - (void)setUI {
     self.view.backgroundColor = [UIColor whiteColor];
     self.searchView = [[PCCSearchView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidht, kScreenHeight * 0.9)];
+    self.searchView.fileSearchbar.delegate = self;
     [self.view addSubview:_searchView];
 }
 
 
 - (void)clickLeftBtn {
+    
     [self.navigationController popViewControllerAnimated:NO];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark -- UISearchBarDelegate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSString *describeStr = searchBar.text;
+    NSString *describeString = [describeStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"7" describe:describeString isback:false];
+    NSString *commandStr = [commandModel toJSONString];
+    NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
+    [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
+}
+
+
 
 /*
 #pragma mark - Navigation

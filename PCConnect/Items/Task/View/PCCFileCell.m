@@ -82,10 +82,10 @@
     self.fileLabel = [[UILabel alloc] init];
     [self.contentView addSubview:_fileLabel];
     
-    self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_selectButton setImage:[UIImage imageNamed:@"选择1"] forState:UIControlStateNormal];
-    [_selectButton setImage:[UIImage imageNamed:@"选择"] forState:UIControlStateSelected];
-    [self.contentView addSubview:_selectButton];
+//    self.selectButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [_selectButton setImage:[UIImage imageNamed:@"选择1"] forState:UIControlStateNormal];
+//    [_selectButton setImage:[UIImage imageNamed:@"选择"] forState:UIControlStateSelected];
+//    [self.contentView addSubview:_selectButton];
     
     [_fileView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
@@ -100,11 +100,11 @@
         make.height.mas_equalTo(kScreenHeight * 0.05);
     }];
 
-    [_selectButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView.mas_right).with.offset(-15);
-        make.centerY.equalTo(self.contentView.mas_centerY);
-        make.width.and.height.mas_equalTo(kScreenHeight * 0.03);
-    }];
+//    [_selectButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(self.contentView.mas_right).with.offset(-15);
+//        make.centerY.equalTo(self.contentView.mas_centerY);
+//        make.width.and.height.mas_equalTo(kScreenHeight * 0.03);
+//    }];
 }
 
 

@@ -7,26 +7,59 @@
 //
 
 #import "PCCDiskDataModel.h"
-#import "PCCSocketModel.h"
 #import "PCCCommandModel.h"
+#import "NSString+SubString.h"
 
 @implementation PCCDiskDataModel
 
 - (instancetype)init{
-    if(self == [super init]){
-        
+    self = [super init];
+    if(self != nil) {
         PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:@"4" describe:@"" isback:true];
         NSString *commandStr = [commandModel toJSONString];
         NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
-        [[PCCSocketModel shareInstance] sendCmd:cmdStr];
+        [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
+        [PCCSocketCmd shareInstance].cmdDelegate = self;
         
-        NSLog(@"result-- %@",[PCCSocketModel shareInstance].resultString);
-        
-        
-        self.diskSpaceArray = @[@18.0,@82.0,@14.0,@26.0];
-        self.diskPartitionArray = @[@"C盘",@"新加卷1",@"新加卷2",@"新加卷3"];
     }
     return self;
+}
+
+#pragma mark --SocketDelegate
+- (void)getCmdDataMessage:(NSData *)data {
+    
+    int a;
+    if (data.length <= 4) {
+        int i;
+        [data getBytes: &i length: sizeof(i)];
+        a = CFSwapInt32BigToHost((uint32_t)i);
+        return;
+    } else {
+        NSString *resultString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *jsonString = [NSString subString:resultString FromElement:@"[" toElement:@"]"];
+        NSArray *jsonArray = [PCCCommandModel arrayWithJsonString:jsonString];
+        self.diskPartitionArray = [NSMutableArray arrayWithCapacity:jsonArray.count];
+        self.diskArray = [NSMutableArray arrayWithCapacity:jsonArray.count];
+        self.diskSpaceArray = [NSMutableArray arrayWithCapacity:jsonArray.count];
+        for (NSUInteger i = 0; i < jsonArray.count; i++) {
+            NSDictionary *dict = jsonArray[i];
+            [self.diskSpaceArray addObject:dict[@"useInfo"]];
+            [self.diskArray addObject:dict[@"path"]];
+            [self.diskPartitionArray addObject:dict[@"drive"]];
+        }
+        
+        NSArray *diskPartitionArray = _diskPartitionArray;
+        NSArray *diskArray = _diskArray;
+        NSArray *diskPaceArray = _diskSpaceArray;
+        NSDictionary *resultDict = @{
+                                     @"path" : diskArray,
+                                     @"useInfo" : diskPaceArray,
+                                     @"drive" : diskPartitionArray,
+                                     };
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"diskData" object:nil userInfo:resultDict];
+    }
+    
+  
 }
 
 @end

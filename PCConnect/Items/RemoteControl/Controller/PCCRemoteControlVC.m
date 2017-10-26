@@ -83,7 +83,7 @@
         
         PCCLoginController *loginVC = [[PCCLoginController alloc] init];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:loginVC animated:YES completion:nil];
-        _isOnline = [PCCSocketModel shareInstance].isOnline;
+        _isOnline = [PCCSocketCmd shareInstance].isOnline;
     } else {
         
         UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"当前已链接" preferredStyle:UIAlertControllerStyleAlert];
@@ -98,9 +98,9 @@
 // 与服务器断开连接
 - (void)setDownConnect {
     _isOnline = NO;
-    [PCCSocketModel shareInstance].isOnline = NO;
-    [PCCSocketModel shareInstance].socket.userData = SocketOfflineByUser;
-    [[PCCSocketModel shareInstance] cutOffCmdSocket];
+    [PCCSocketCmd shareInstance].isOnline = NO;
+    [PCCSocketCmd shareInstance].socket.userData = SocketOfflineByUser;
+    [[PCCSocketCmd shareInstance] cutOffCmdSocket];
     [self refreshIconView];
 }
 
@@ -108,15 +108,16 @@
 - (void)refreshIconView {
     if (_isOnline == YES) {
         self.iconView.titleLabel.text = @"当前已连接";
-        self.iconView.iconImageView.image = [UIImage imageNamed:@"icon"];
+        self.iconView.iconImageView.image = [UIImage imageNamed:@"image_online"];
     } else {
         self.iconView.titleLabel.text = @"未连接";
-        self.iconView.iconImageView.image = [UIImage imageNamed:@""];
+        self.iconView.iconImageView.image = [UIImage imageNamed:@"image"];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    _isOnline = [PCCSocketModel shareInstance].isOnline;
+    
+    _isOnline = [PCCSocketCmd shareInstance].isOnline;
     [self refreshIconView];
 }
 - (void)didReceiveMemoryWarning {

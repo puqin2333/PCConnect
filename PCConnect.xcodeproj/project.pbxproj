@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		14B6ED083BA9095D57F39C7C /* libPods-PCConnect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C34256CC878EA2188CAF67E /* libPods-PCConnect.a */; };
+		741BEF851F9F4998008B517A /* PCCSocketFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 741BEF841F9F4998008B517A /* PCCSocketFile.m */; };
+		741BEF891F9F49B5008B517A /* PCCSocketCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 741BEF881F9F49B5008B517A /* PCCSocketCmd.m */; };
+		741BEF8D1F9FA401008B517A /* PCCNoticeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 741BEF8C1F9FA401008B517A /* PCCNoticeVC.m */; };
 		74309F201F8E1CF700053CAA /* LDSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F1D1F8E1CF700053CAA /* LDSegmentView.m */; };
 		74309F211F8E1CF700053CAA /* LDSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F1F1F8E1CF700053CAA /* LDSegmentViewController.m */; };
 		74309F251F8E44B100053CAA /* PCCHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F241F8E44B100053CAA /* PCCHeaderFooterView.m */; };
@@ -20,7 +23,12 @@
 		74309F3B1F90013D00053CAA /* PCCMouseControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F3A1F90013D00053CAA /* PCCMouseControlVC.m */; };
 		74309F3E1F90015B00053CAA /* PCCSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 74309F3D1F90015B00053CAA /* PCCSearchVC.m */; };
 		743122061F7FBC9700352168 /* PCCIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 743122051F7FBC9700352168 /* PCCIconView.m */; };
-		7447313F1F88C71C00D470FC /* PCCSocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7447313E1F88C71C00D470FC /* PCCSocketModel.m */; };
+		7434EF2F1F9B89E8006D6613 /* PCCFileShowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7434EF2E1F9B89E8006D6613 /* PCCFileShowVC.m */; };
+		7434EF331F9B8A29006D6613 /* PCCFileMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7434EF321F9B8A29006D6613 /* PCCFileMessageModel.m */; };
+		745FEADD1F9B23BC00CCF052 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 745FEADB1F9B23BC00CCF052 /* image.png */; };
+		745FEADF1F9B24BC00CCF052 /* image_online.png in Resources */ = {isa = PBXBuildFile; fileRef = 745FEADE1F9B24BC00CCF052 /* image_online.png */; };
+		745FEAE21F9B3FBF00CCF052 /* NSString+SubString.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FEAE11F9B3FBF00CCF052 /* NSString+SubString.m */; };
+		745FEAE71F9B51AD00CCF052 /* PCCCommandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FEAE61F9B51AD00CCF052 /* PCCCommandModel.m */; };
 		7460336B1F97592100E6E8F2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746033681F97587600E6E8F2 /* Charts.framework */; };
 		7460336C1F97592100E6E8F2 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 746033681F97587600E6E8F2 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		746033721F97595400E6E8F2 /* bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746033711F97595400E6E8F2 /* bridge.swift */; };
@@ -28,13 +36,14 @@
 		7460337D1F97927D00E6E8F2 /* PCCDiskDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7460337C1F97927D00E6E8F2 /* PCCDiskDataModel.m */; };
 		7466C9E71F8C7C650065DFB4 /* PCCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466C9E61F8C7C650065DFB4 /* PCCLoginController.m */; };
 		7466C9EF1F8C87650065DFB4 /* PCCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466C9EE1F8C87650065DFB4 /* PCCTextField.m */; };
-		7466C9FA1F8D05290065DFB4 /* NSString+PCCDictToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466C9F91F8D05290065DFB4 /* NSString+PCCDictToJSON.m */; };
+		746748A11FA09FA500A01CE4 /* PCCFileDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 746748A01FA09FA500A01CE4 /* PCCFileDataModel.m */; };
+		746748A51FA0B46100A01CE4 /* PCCFileDoucment.m in Sources */ = {isa = PBXBuildFile; fileRef = 746748A41FA0B46100A01CE4 /* PCCFileDoucment.m */; };
 		7470777C1F8E0579005076A1 /* PCCQuestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470777B1F8E0579005076A1 /* PCCQuestionVC.m */; };
 		7470777F1F8E05D7005076A1 /* PCCFeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470777E1F8E05D7005076A1 /* PCCFeedbackVC.m */; };
 		747077821F8E05EB005076A1 /* PCCAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 747077811F8E05EB005076A1 /* PCCAboutVC.m */; };
 		7470778C1F8E1231005076A1 /* PCCDownloadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470778B1F8E1231005076A1 /* PCCDownloadVC.m */; };
 		7470778F1F8E12E2005076A1 /* PCCUploadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7470778E1F8E12E2005076A1 /* PCCUploadVC.m */; };
-		7474EE651F998A8B00E2DC7F /* PCCCommandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7474EE641F998A8B00E2DC7F /* PCCCommandModel.m */; };
+		7473920E1F9E591800256E70 /* PCCFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7473920D1F9E591800256E70 /* PCCFileModel.m */; };
 		7474EE691F9994C400E2DC7F /* PCCShootScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7474EE681F9994C400E2DC7F /* PCCShootScreenVC.m */; };
 		748A39481F8B9DE100042AD4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 748A39471F8B9DE100042AD4 /* CFNetwork.framework */; };
 		748D5F6F1F7BDA7D00244E3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D5F6E1F7BDA7D00244E3B /* AppDelegate.m */; };
@@ -111,6 +120,12 @@
 
 /* Begin PBXFileReference section */
 		1C34256CC878EA2188CAF67E /* libPods-PCConnect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PCConnect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		741BEF831F9F4998008B517A /* PCCSocketFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCSocketFile.h; sourceTree = "<group>"; };
+		741BEF841F9F4998008B517A /* PCCSocketFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCSocketFile.m; sourceTree = "<group>"; };
+		741BEF871F9F49B5008B517A /* PCCSocketCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCSocketCmd.h; sourceTree = "<group>"; };
+		741BEF881F9F49B5008B517A /* PCCSocketCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCSocketCmd.m; sourceTree = "<group>"; };
+		741BEF8B1F9FA401008B517A /* PCCNoticeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCNoticeVC.h; sourceTree = "<group>"; };
+		741BEF8C1F9FA401008B517A /* PCCNoticeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCNoticeVC.m; sourceTree = "<group>"; };
 		74309F1C1F8E1CF700053CAA /* LDSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSegmentView.h; sourceTree = "<group>"; };
 		74309F1D1F8E1CF700053CAA /* LDSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSegmentView.m; sourceTree = "<group>"; };
 		74309F1E1F8E1CF700053CAA /* LDSegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSegmentViewController.h; sourceTree = "<group>"; };
@@ -135,8 +150,15 @@
 		74309F3D1F90015B00053CAA /* PCCSearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCSearchVC.m; sourceTree = "<group>"; };
 		743122041F7FBC9700352168 /* PCCIconView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCIconView.h; sourceTree = "<group>"; };
 		743122051F7FBC9700352168 /* PCCIconView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCIconView.m; sourceTree = "<group>"; };
-		7447313D1F88C71C00D470FC /* PCCSocketModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCSocketModel.h; sourceTree = "<group>"; };
-		7447313E1F88C71C00D470FC /* PCCSocketModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCSocketModel.m; sourceTree = "<group>"; };
+		7434EF2D1F9B89E8006D6613 /* PCCFileShowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCFileShowVC.h; sourceTree = "<group>"; };
+		7434EF2E1F9B89E8006D6613 /* PCCFileShowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCFileShowVC.m; sourceTree = "<group>"; };
+		7434EF311F9B8A29006D6613 /* PCCFileMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCFileMessageModel.h; sourceTree = "<group>"; };
+		7434EF321F9B8A29006D6613 /* PCCFileMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCFileMessageModel.m; sourceTree = "<group>"; };
+		745FEADB1F9B23BC00CCF052 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		745FEADE1F9B24BC00CCF052 /* image_online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_online.png; sourceTree = "<group>"; };
+		745FEAE01F9B3FBF00CCF052 /* NSString+SubString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SubString.h"; sourceTree = "<group>"; };
+		745FEAE11F9B3FBF00CCF052 /* NSString+SubString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SubString.m"; sourceTree = "<group>"; };
+		745FEAE61F9B51AD00CCF052 /* PCCCommandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCCommandModel.m; sourceTree = "<group>"; };
 		746033621F97587500E6E8F2 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		746033701F97595400E6E8F2 /* PCConnect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PCConnect-Bridging-Header.h"; sourceTree = "<group>"; };
 		746033711F97595400E6E8F2 /* bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bridge.swift; sourceTree = "<group>"; };
@@ -152,9 +174,10 @@
 		7466C9EB1F8C86D70065DFB4 /* UILabel+WXYLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+WXYLabel.h"; sourceTree = "<group>"; };
 		7466C9ED1F8C87650065DFB4 /* PCCTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCTextField.h; sourceTree = "<group>"; };
 		7466C9EE1F8C87650065DFB4 /* PCCTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCTextField.m; sourceTree = "<group>"; };
-		7466C9F11F8CD2540065DFB4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		7466C9F81F8D05290065DFB4 /* NSString+PCCDictToJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+PCCDictToJSON.h"; sourceTree = "<group>"; };
-		7466C9F91F8D05290065DFB4 /* NSString+PCCDictToJSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+PCCDictToJSON.m"; sourceTree = "<group>"; };
+		7467489F1FA09FA500A01CE4 /* PCCFileDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCFileDataModel.h; sourceTree = "<group>"; };
+		746748A01FA09FA500A01CE4 /* PCCFileDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCFileDataModel.m; sourceTree = "<group>"; };
+		746748A31FA0B46100A01CE4 /* PCCFileDoucment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCFileDoucment.h; sourceTree = "<group>"; };
+		746748A41FA0B46100A01CE4 /* PCCFileDoucment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCFileDoucment.m; sourceTree = "<group>"; };
 		7470777A1F8E0579005076A1 /* PCCQuestionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCQuestionVC.h; sourceTree = "<group>"; };
 		7470777B1F8E0579005076A1 /* PCCQuestionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCQuestionVC.m; sourceTree = "<group>"; };
 		7470777D1F8E05D7005076A1 /* PCCFeedbackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCFeedbackVC.h; sourceTree = "<group>"; };
@@ -165,8 +188,9 @@
 		7470778B1F8E1231005076A1 /* PCCDownloadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCDownloadVC.m; sourceTree = "<group>"; };
 		7470778D1F8E12E2005076A1 /* PCCUploadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCUploadVC.h; sourceTree = "<group>"; };
 		7470778E1F8E12E2005076A1 /* PCCUploadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCUploadVC.m; sourceTree = "<group>"; };
+		7473920C1F9E591800256E70 /* PCCFileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCFileModel.h; sourceTree = "<group>"; };
+		7473920D1F9E591800256E70 /* PCCFileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCFileModel.m; sourceTree = "<group>"; };
 		7474EE631F998A8B00E2DC7F /* PCCCommandModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCCommandModel.h; sourceTree = "<group>"; };
-		7474EE641F998A8B00E2DC7F /* PCCCommandModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCCommandModel.m; sourceTree = "<group>"; };
 		7474EE671F9994C400E2DC7F /* PCCShootScreenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCShootScreenVC.h; sourceTree = "<group>"; };
 		7474EE681F9994C400E2DC7F /* PCCShootScreenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCShootScreenVC.m; sourceTree = "<group>"; };
 		748A39251F8B7D6F00042AD4 /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,8 +342,10 @@
 		7447313C1F88C6F200D470FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7447313D1F88C71C00D470FC /* PCCSocketModel.h */,
-				7447313E1F88C71C00D470FC /* PCCSocketModel.m */,
+				741BEF871F9F49B5008B517A /* PCCSocketCmd.h */,
+				741BEF881F9F49B5008B517A /* PCCSocketCmd.m */,
+				741BEF831F9F4998008B517A /* PCCSocketFile.h */,
+				741BEF841F9F4998008B517A /* PCCSocketFile.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,6 +384,15 @@
 				7466C9EE1F8C87650065DFB4 /* PCCTextField.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		746748A61FA0B47300A01CE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				746748A31FA0B46100A01CE4 /* PCCFileDoucment.h */,
+				746748A41FA0B46100A01CE4 /* PCCFileDoucment.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		748A393A1F8B9D7200042AD4 /* CocoaAsyncSocket */ = {
@@ -460,7 +495,8 @@
 			children = (
 				746033621F97587500E6E8F2 /* Charts.xcodeproj */,
 				74F99A591F7E510800C99C97 /* Default-568h@2x.png */,
-				7466C9F11F8CD2540065DFB4 /* icon.png */,
+				745FEADB1F9B23BC00CCF052 /* image.png */,
+				745FEADE1F9B24BC00CCF052 /* image_online.png */,
 				748D5F6D1F7BDA7D00244E3B /* AppDelegate.h */,
 				748D5F6E1F7BDA7D00244E3B /* AppDelegate.m */,
 				748D5F731F7BDA7D00244E3B /* Main.storyboard */,
@@ -516,6 +552,7 @@
 		748D5FE31F7C99D700244E3B /* Document */ = {
 			isa = PBXGroup;
 			children = (
+				746748A61FA0B47300A01CE4 /* Model */,
 				74309F291F8E735000053CAA /* View */,
 				74F99A451F7E490300C99C97 /* Contorller */,
 			);
@@ -533,8 +570,8 @@
 		748D5FE51F7C9A3000244E3B /* NSExtension */ = {
 			isa = PBXGroup;
 			children = (
-				7466C9F81F8D05290065DFB4 /* NSString+PCCDictToJSON.h */,
-				7466C9F91F8D05290065DFB4 /* NSString+PCCDictToJSON.m */,
+				745FEAE01F9B3FBF00CCF052 /* NSString+SubString.h */,
+				745FEAE11F9B3FBF00CCF052 /* NSString+SubString.m */,
 			);
 			path = NSExtension;
 			sourceTree = "<group>";
@@ -667,6 +704,10 @@
 				74309F3D1F90015B00053CAA /* PCCSearchVC.m */,
 				7474EE671F9994C400E2DC7F /* PCCShootScreenVC.h */,
 				7474EE681F9994C400E2DC7F /* PCCShootScreenVC.m */,
+				7434EF2D1F9B89E8006D6613 /* PCCFileShowVC.h */,
+				7434EF2E1F9B89E8006D6613 /* PCCFileShowVC.m */,
+				741BEF8B1F9FA401008B517A /* PCCNoticeVC.h */,
+				741BEF8C1F9FA401008B517A /* PCCNoticeVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -690,7 +731,13 @@
 				7460337B1F97927D00E6E8F2 /* PCCDiskDataModel.h */,
 				7460337C1F97927D00E6E8F2 /* PCCDiskDataModel.m */,
 				7474EE631F998A8B00E2DC7F /* PCCCommandModel.h */,
-				7474EE641F998A8B00E2DC7F /* PCCCommandModel.m */,
+				745FEAE61F9B51AD00CCF052 /* PCCCommandModel.m */,
+				7434EF311F9B8A29006D6613 /* PCCFileMessageModel.h */,
+				7434EF321F9B8A29006D6613 /* PCCFileMessageModel.m */,
+				7473920C1F9E591800256E70 /* PCCFileModel.h */,
+				7473920D1F9E591800256E70 /* PCCFileModel.m */,
+				7467489F1FA09FA500A01CE4 /* PCCFileDataModel.h */,
+				746748A01FA09FA500A01CE4 /* PCCFileDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -839,10 +886,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745FEADF1F9B24BC00CCF052 /* image_online.png in Resources */,
 				748D5F7A1F7BDA7D00244E3B /* LaunchScreen.storyboard in Resources */,
 				74F99A5A1F7E510800C99C97 /* Default-568h@2x.png in Resources */,
 				748D5F771F7BDA7D00244E3B /* Assets.xcassets in Resources */,
 				748D5F751F7BDA7D00244E3B /* Main.storyboard in Resources */,
+				745FEADD1F9B23BC00CCF052 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,41 +965,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				74309F281F8E714E00053CAA /* PCCFileCell.m in Sources */,
+				741BEF851F9F4998008B517A /* PCCSocketFile.m in Sources */,
 				743122061F7FBC9700352168 /* PCCIconView.m in Sources */,
 				746033721F97595400E6E8F2 /* bridge.swift in Sources */,
 				7470778C1F8E1231005076A1 /* PCCDownloadVC.m in Sources */,
 				746033761F9772E300E6E8F2 /* PCCDiskCell.m in Sources */,
+				746748A51FA0B46100A01CE4 /* PCCFileDoucment.m in Sources */,
 				747077821F8E05EB005076A1 /* PCCAboutVC.m in Sources */,
-				7447313F1F88C71C00D470FC /* PCCSocketModel.m in Sources */,
 				74309F201F8E1CF700053CAA /* LDSegmentView.m in Sources */,
+				7473920E1F9E591800256E70 /* PCCFileModel.m in Sources */,
 				74CF7F7B1F7CB82800CFE6B4 /* PCCNavgationController.m in Sources */,
 				74309F3B1F90013D00053CAA /* PCCMouseControlVC.m in Sources */,
 				74F99A4B1F7E497C00C99C97 /* PCCRemoteControlVC.m in Sources */,
 				74309F381F9000FA00053CAA /* PCCDiskDocumentVC.m in Sources */,
+				7434EF331F9B8A29006D6613 /* PCCFileMessageModel.m in Sources */,
 				74CF7F811F7CB8CF00CFE6B4 /* PCCTabBar.m in Sources */,
 				74309F351F9000B800053CAA /* PCCQuiteCmdVC.m in Sources */,
 				7470777F1F8E05D7005076A1 /* PCCFeedbackVC.m in Sources */,
 				74F99A401F7E45F300C99C97 /* PCCMenuItem.m in Sources */,
 				74F99A3D1F7E427C00C99C97 /* PCCComposeVC.m in Sources */,
 				7460337D1F97927D00E6E8F2 /* PCCDiskDataModel.m in Sources */,
+				745FEAE21F9B3FBF00CCF052 /* NSString+SubString.m in Sources */,
 				74309F251F8E44B100053CAA /* PCCHeaderFooterView.m in Sources */,
 				74309F2F1F8F8CB600053CAA /* PCCDocumentCell.m in Sources */,
 				748D5F7D1F7BDA7D00244E3B /* main.m in Sources */,
-				7474EE651F998A8B00E2DC7F /* PCCCommandModel.m in Sources */,
 				7466C9EF1F8C87650065DFB4 /* PCCTextField.m in Sources */,
+				741BEF8D1F9FA401008B517A /* PCCNoticeVC.m in Sources */,
 				748D5F6F1F7BDA7D00244E3B /* AppDelegate.m in Sources */,
 				74309F2C1F8E736D00053CAA /* PCCSearchView.m in Sources */,
 				7474EE691F9994C400E2DC7F /* PCCShootScreenVC.m in Sources */,
 				74F99A481F7E493B00C99C97 /* PCCDocumentVC.m in Sources */,
+				746748A11FA09FA500A01CE4 /* PCCFileDataModel.m in Sources */,
 				74309F3E1F90015B00053CAA /* PCCSearchVC.m in Sources */,
-				7466C9FA1F8D05290065DFB4 /* NSString+PCCDictToJSON.m in Sources */,
 				74F99A4F1F7E49AF00C99C97 /* PCCTaskVC.m in Sources */,
 				74309F321F8F98CF00053CAA /* PCCCollectionView.m in Sources */,
 				7470778F1F8E12E2005076A1 /* PCCUploadVC.m in Sources */,
+				741BEF891F9F49B5008B517A /* PCCSocketCmd.m in Sources */,
 				74CF7F781F7CB7FD00CFE6B4 /* PCCTabBarController.m in Sources */,
 				7466C9E71F8C7C650065DFB4 /* PCCLoginController.m in Sources */,
 				74F99A531F7E49DC00C99C97 /* PCCSettingVC.m in Sources */,
+				745FEAE71F9B51AD00CCF052 /* PCCCommandModel.m in Sources */,
 				74F99A3A1F7E41DB00C99C97 /* PCCItemButton.m in Sources */,
+				7434EF2F1F9B89E8006D6613 /* PCCFileShowVC.m in Sources */,
 				74309F211F8E1CF700053CAA /* LDSegmentViewController.m in Sources */,
 				7470777C1F8E0579005076A1 /* PCCQuestionVC.m in Sources */,
 			);
@@ -1060,7 +1116,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1109,7 +1165,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1124,10 +1180,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CJTVX9JNKS;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PCConnect/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = PCConnect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1146,10 +1202,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CJTVX9JNKS;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PCConnect/Helper/PrefixHeader.pch";
 				INFOPLIST_FILE = PCConnect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PuChin.PCConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
