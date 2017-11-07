@@ -123,7 +123,7 @@
         NSString *commandStr = [commandModel toJSONString];
         NSString *cmdStr = [NSString stringWithFormat:@"%@_%@_%@",COMMAND,commandStr,END_FLAG];
         [[PCCSocketCmd shareInstance] sendCmd:cmdStr];
-    }else {
+    } else {
         NSUInteger i = 200 + switchButton.tag;
         NSString *typeString = [NSString stringWithFormat:@"%lu",i];
         PCCCommandModel *commandModel = [[PCCCommandModel alloc] initWithType:typeString isback:false];

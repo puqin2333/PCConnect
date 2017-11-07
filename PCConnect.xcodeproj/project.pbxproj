@@ -34,6 +34,7 @@
 		746033721F97595400E6E8F2 /* bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746033711F97595400E6E8F2 /* bridge.swift */; };
 		746033761F9772E300E6E8F2 /* PCCDiskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 746033751F9772E300E6E8F2 /* PCCDiskCell.m */; };
 		7460337D1F97927D00E6E8F2 /* PCCDiskDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7460337C1F97927D00E6E8F2 /* PCCDiskDataModel.m */; };
+		746564D31FA9D8FD00643427 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746564D21FA9D8FD00643427 /* ViewController.m */; };
 		7466C9E71F8C7C650065DFB4 /* PCCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466C9E61F8C7C650065DFB4 /* PCCLoginController.m */; };
 		7466C9EF1F8C87650065DFB4 /* PCCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466C9EE1F8C87650065DFB4 /* PCCTextField.m */; };
 		746748A11FA09FA500A01CE4 /* PCCFileDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 746748A01FA09FA500A01CE4 /* PCCFileDataModel.m */; };
@@ -166,6 +167,8 @@
 		746033751F9772E300E6E8F2 /* PCCDiskCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCDiskCell.m; sourceTree = "<group>"; };
 		7460337B1F97927D00E6E8F2 /* PCCDiskDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCDiskDataModel.h; sourceTree = "<group>"; };
 		7460337C1F97927D00E6E8F2 /* PCCDiskDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCDiskDataModel.m; sourceTree = "<group>"; };
+		746564D11FA9D8FD00643427 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		746564D21FA9D8FD00643427 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7466C9E51F8C7C650065DFB4 /* PCCLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCLoginController.h; sourceTree = "<group>"; };
 		7466C9E61F8C7C650065DFB4 /* PCCLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCLoginController.m; sourceTree = "<group>"; };
 		7466C9E81F8C86D70065DFB4 /* UIAlertController+show.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+show.m"; sourceTree = "<group>"; };
@@ -505,6 +508,8 @@
 				748D5F7C1F7BDA7D00244E3B /* main.m */,
 				746033711F97595400E6E8F2 /* bridge.swift */,
 				746033701F97595400E6E8F2 /* PCConnect-Bridging-Header.h */,
+				746564D11FA9D8FD00643427 /* ViewController.h */,
+				746564D21FA9D8FD00643427 /* ViewController.m */,
 			);
 			path = SupportFile;
 			sourceTree = "<group>";
@@ -984,6 +989,7 @@
 				7470777F1F8E05D7005076A1 /* PCCFeedbackVC.m in Sources */,
 				74F99A401F7E45F300C99C97 /* PCCMenuItem.m in Sources */,
 				74F99A3D1F7E427C00C99C97 /* PCCComposeVC.m in Sources */,
+				746564D31FA9D8FD00643427 /* ViewController.m in Sources */,
 				7460337D1F97927D00E6E8F2 /* PCCDiskDataModel.m in Sources */,
 				745FEAE21F9B3FBF00CCF052 /* NSString+SubString.m in Sources */,
 				74309F251F8E44B100053CAA /* PCCHeaderFooterView.m in Sources */,
@@ -1168,6 +1174,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

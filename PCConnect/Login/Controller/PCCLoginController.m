@@ -164,6 +164,7 @@
     [textField resignFirstResponder];
     return YES;
 }
+
 // 键盘消失
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [_usernameTextField resignFirstResponder];
